@@ -1,0 +1,28 @@
+.hero
+  padding: 3rem 0 0
+  height: 100vh
+  background: url('../img/hero-bg.png') no-repeat 100%/auto 100%
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    height: 34.2rem
+    background: url('../img/hero-ruukki.png') no-repeat 105% 100%
+    width: 100%
+    bottom: 0
+    left: 0
+    right: 0
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    width: 28%
+    background: $hero-bg
+    z-index: 0
+  .container
+    max-width: 143rem
+    padding: 0 1rem
+
+

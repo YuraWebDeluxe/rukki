@@ -1,5 +1,5 @@
 'use strict';
-// Hello Gulp
+
 var gulp         = require('gulp'),
 	sass         = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
@@ -12,17 +12,48 @@ var gulp         = require('gulp'),
 	spritesmith  = require('gulp.spritesmith'),
 	merge        = require('merge-stream'),
 	buffer       = require('vinyl-buffer'),
-	imagemin     = require('gulp-imagemin');
+	htmlhint     = require("gulp-htmlhint"),
+	uncss        = require('gulp-uncss'),
+	psi 	     = require('psi'),
+	imagemin     = require('gulp-imagemin'),
+	site = 'http://www.html5rocks.com';
 
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
 	browserSync.init({
 		server: {
-			baseDir: "./app"
+			baseDir: "./app/"
 		},
 		notify: true
 	});
 });
+
+gulp.task('mobile', function () {
+    return psi(site, {
+        // key: key
+        nokey: 'true',
+        strategy: 'mobile',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+        console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+    });
+});
+
+gulp.task('desktop', function () {
+    return psi(site, {
+        nokey: 'true',
+        // key: key,
+        strategy: 'desktop',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+    });
+});
+
+gulp.task('htmlhint', function() {
+	return gulp.src("app/*.html")
+	.pipe(htmlhint('.htmlhintrc'))
+	.pipe(htmlhint.reporter())
+})
 
 gulp.task('sass-lint', function() {
   return gulp.src('sass/**/*.sass')
@@ -30,7 +61,8 @@ gulp.task('sass-lint', function() {
         options: {
           formatter: 'stylish'
         },
-        rules: {
+        files: {ignore: 'sass/vendors/*.sass'},
+        rules: {        	
           	'no-ids': 1,
             'no-color-keywords': 1,
             'no-mergeable-selectors': 1,
@@ -40,7 +72,13 @@ gulp.task('sass-lint', function() {
             'quotes': 1,
             'no-vendor-prefixes': 1,
             'shorthand-values': 1,
-            'no-color-literals': 1
+            'no-color-literals': 1,
+            'force-attribute-nesting': 0,
+  			'force-element-nesting': 0,
+  			'class-name-format': 0,
+  			'force-pseudo-nesting': 0,
+  			'property-sort-order': 0,
+  			'empty-line-between-blocks': 0
       	}
       }))
       .pipe(sassLint.format())
@@ -95,6 +133,9 @@ gulp.task('styles', function () {
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
 	.pipe(cleanCSS())
+	/*.pipe(uncss({
+       html: ['app/*.html']
+    }))*/
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
 });
@@ -117,6 +158,7 @@ gulp.task('scripts', function() {
 
 gulp.task('watch', function () {
 	gulp.watch('sass/**/*.sass', ['styles']);
+	gulp.watch('app/*.html', ['htmlhint']);
 	gulp.watch('app/libs/**/*.js', ['scripts']);
 	gulp.watch('sass/**/*.sass', ['sass-lint']);
 	gulp.watch('app/js/*.js').on("change", browserSync.reload);
@@ -124,4 +166,4 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['browser-sync', 'watch', 'imgMin']);
+gulp.task('default', ['browser-sync', 'watch', 'imgMin', 'htmlhint']);

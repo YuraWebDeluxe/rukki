@@ -1,0 +1,53 @@
+.header
+  padding: 1rem 0
+  position: relative
+  z-index: 10
+  &__container
+    display: flex
+    align-items: center
+    margin: 0 auto
+    max-width: 143rem
+    padding: 0 1rem
+
+  &__logo
+    align-items: center
+    display: flex
+    p
+      padding: 1rem 0 1rem 1rem
+      margin: 0 0 .3rem  1rem
+      font: 1.4rem/1.1 'gm'
+      border-left: 1px solid $logo-border
+      color: $logo-text
+  &__phones
+    @include list-default
+    display: flex
+    margin: 0 7rem 0 auto
+    li
+      padding: 0 2rem
+    a
+      font: 2rem/1 'gm'
+      text-decoration: none
+      color: $text-dark
+      position: relative
+      padding-left: 3.5rem
+      display: block
+      &::before
+        content: ''
+        width: 2.9rem
+        height: 2.9rem
+        display: inline-block
+        position: absolute
+        left: 0
+        top: -.3rem  
+      &.h-phone
+        &::before
+          background: url('../img/i-phone.png')
+      &.h-telegram
+        &::before
+          background: url('../img/i-phone.png')
+
+  .hamburger
+    align-self: center
+
+
+    
