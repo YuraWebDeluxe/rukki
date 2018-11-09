@@ -1,0 +1,109 @@
+.section-form
+  @include pseudo(b)
+    width: 53.5rem
+    height: 32.1rem
+    background: url('../img/dah-form.png')
+    top: -9rem
+    right: -21rem
+  max-width: 95rem
+  background: url('../img/section-from-bg.png'), $red-rgba
+  background-size: cover
+  margin: 0 auto
+  color: $white
+  padding: 9rem 12rem 8rem 10rem
+  position: relative
+  box-shadow: 0 37px 72px -20px $dark-shadow
+  &__title
+    font: 6rem/1 'gmb'
+    margin: 0 0 1rem
+  &__subtitle
+    text-align: right
+    font: 3.6rem/1 'gmb'
+    margin: 0 0 3rem
+  &__text
+    font: 1.6rem/1 'gml'
+    text-align: center
+    margin: 0 0 5rem
+  &__form
+    display: flex
+  .input-wrap
+    [type='text']
+      width: 100%
+      background: 0
+      height: 6rem
+      border: 0
+      border-bottom: 2px solid $white
+      font: 1.8rem/1 'gml'
+      color: $white
+      padding-left: 3rem
+      &::placeholder
+        color: transparent
+      &:focus + label
+        font-size: 1.6rem
+        top: -.3rem
+        left: 0
+      &:focus
+        outline: none
+    &--text
+      height: 6rem
+      max-width: 100%
+      width: 64rem
+      position: relative
+      [name='your-phone']
+        background: url('../img/your-phone.png') no-repeat 0 center
+      label
+        position: absolute
+        top: 50%
+        left: 3rem
+        transform: translate(0, -50%)
+        font: 1.8rem/1 'gml'
+        transition: .3s ease-in-out
+    &--submit
+      height: 6rem
+      width: 32rem
+      max-width: 100%
+      position: absolute
+      bottom: 8rem
+      right: -16rem
+      background: $red
+      overflow: hidden
+      &::after
+        font-family: 'FontAwesome'
+        content: '\2192'
+        color: $text-dark
+        display: inline-block
+        font-size: 2.5rem
+        position: absolute
+        top: 1rem
+        right: 8%
+      &::before
+        content: ''
+        position: absolute
+        left: -15px
+        top: 0
+        height: 100%
+        width: 80%
+        background: $text-dark
+        transform: skew(-25deg)
+        z-index: 0
+        transition: .3s ease-in left, .3s ease-in transform, .3s ease-in width
+      [type='submit']
+        height: 6rem
+        width: 100%
+        background-color: transparent
+        border: 0
+        color: $white
+        font: 1.8rem/1 'gmm'
+        padding-left: 6rem
+        text-align: left
+        position: absolute
+        z-index: 3
+        transition: .3s ease-in padding
+    &:hover
+      [type='submit']
+        cursor: pointer
+        padding-left: 8rem
+      &::before
+        left: 100%
+        width: 25%
+        transform: skew(0deg)
