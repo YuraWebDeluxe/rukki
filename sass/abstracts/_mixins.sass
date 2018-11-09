@@ -2,3 +2,16 @@
   padding: $p
   margin: $p
   list-style: none
+@mixin pseudo($type: a, $display: block, $pos: absolute, $content: '')
+  @if $type == a
+    &::after
+      content: $content
+      display: $display
+      position: $pos
+      @content
+  @else if $type == b
+    &::before
+      content: $content
+      display: $display
+      position: $pos
+      @content
