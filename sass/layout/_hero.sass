@@ -1,13 +1,13 @@
 .hero
   padding: 3rem 0 0
   height: 100vh
-  background: url('../img/hero-bg.png') no-repeat 100%/auto 100%
   position: relative
+  overflow: hidden
   &::before
     content: ''
     position: absolute
     height: 34.2rem
-    background: url('../img/hero-ruukki.png') no-repeat 105% 100%
+    background: url('../img/hero-ruukki.png') no-repeat 0% 100%
     width: 100%
     bottom: 0
     left: 0
@@ -18,11 +18,68 @@
     right: 0
     top: 0
     height: 100%
-    width: 28%
-    background: $hero-bg
-    z-index: 0
+    width: 50%
+    background: linear-gradient(to right, $hero-bg 100%, transparent 0), linear-gradient(to right, $hero-bg 100%, transparent 0)
+    background-repeat:  no-repeat
+    background-size:  100% 75%, 65% 50%
+    background-position:  0 0, 100% 100%
+
   .container
     max-width: 143rem
     padding: 0 1rem
-
-
+  &__content
+    position: absolute
+    max-width: 52.5rem
+    top: 50%
+    transform: translateY(-50%)
+  &__title
+    @include pseudo(a)
+      height: 2rem
+      width: 60rem
+      background: url('../img/rp-g.png')
+      top: .8rem
+      right: -45rem
+      z-index: -1
+    font-family: 'gmh'
+    font-size: 3.5rem
+    color: $text-dark
+    max-width: 35rem
+    line-height: 1
+    text-align: right
+    margin-bottom: 10rem
+    text-transform: uppercase
+    span
+      font-family: 'gmeb'
+      font-size: 6rem
+      color: $red
+      text-transform: none
+      display: block
+  &__subtitle
+    font-family: 'gml'
+    font-size: 4.3rem
+    line-height: 1
+    margin-bottom: 10rem
+  &__composition
+    width: 94rem
+    height: 64.9rem
+    position: absolute
+    right: 0
+    z-index: 12
+    top: 50%
+    transform: translateY(-50%)
+    .house
+      position: absolute
+.quality-list
+  @include list-default
+  display: flex
+  position: absolute
+  bottom: -5rem
+  right: 7rem
+  li
+    position: relative
+    &:not(:first-child)
+      left: -2.5rem
+    &:nth-child(3)
+      left: -5rem
+  img
+    width: 12rem
