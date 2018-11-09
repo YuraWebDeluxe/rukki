@@ -15,3 +15,7 @@
       display: $display
       position: $pos
       @content
+
+@mixin make-container($desktop: $container-desktop)
+  max-width: $desktop
+  padding: 0 1rem
