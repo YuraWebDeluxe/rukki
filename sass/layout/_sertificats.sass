@@ -1,0 +1,60 @@
+.sertificats
+  overflow: hidden
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+  &__col
+    flex: 0 0 50%
+    max-width: 50%
+    &--left
+      background: url('../img/sert-show-bg.png') no-repeat 0 center, $text-dark
+      padding: 5rem 10rem
+      display: flex
+      flex-direction: column
+      justify-content: center
+    &--right
+      padding: 5rem 10rem
+      background: url('../img/sert-r-bg.png') no-repeat 95% center, $hero-bg
+  &__title
+    color: $red
+    font: 4.8rem/1 'gmeb'
+    margin-bottom: 2rem
+  &__text
+    color: $white
+    font: 3rem/1 'gm'
+  &__list
+    // sass-lint:disable no-important
+    display: flex !important
+    justify-content: center
+    align-items: center
+    &-item
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      img
+        margin: 0 auto
+    .owl-stage
+      display: flex
+      justify-content: center
+      align-items: stretch
+      height: 100%
+    .owl-stage-outer
+      height: 100%
+
+  .owl-nav
+    position: absolute
+    bottom: -5rem
+    left: -17rem
+    [class^='icon-']
+      font-size: 3rem
+  .owl-dots
+    position: absolute
+    bottom: -5rem
+    left: 0
+    counter-reset: owldots
+    .owl-dot
+      background: transparent
+      &::before
+        counter-increment: owldots
+        content: counter(owldots)

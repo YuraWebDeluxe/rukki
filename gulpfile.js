@@ -149,6 +149,7 @@ gulp.task('scripts', function() {
 		'./libs/lazyimg/lazyimg.min.js',
 		'./libs/fancybox/jquery.fancybox.js',
 		'./libs/jquery.nicescroll.min.js',
+		'./libs/owl/owl.carousel.min.js',
 		'./libs/config.js',
 		])
 		.pipe(concat('libs.js'))
