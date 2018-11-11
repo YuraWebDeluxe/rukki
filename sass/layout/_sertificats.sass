@@ -55,6 +55,10 @@
     counter-reset: owldots
     .owl-dot
       background: transparent
+      font: 1.4rem/1 'gmeb'
+      color: $logo-border
       &::before
         counter-increment: owldots
         content: counter(owldots)
+      &.active
+        color: $red

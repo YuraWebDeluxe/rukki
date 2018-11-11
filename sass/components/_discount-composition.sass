@@ -1,0 +1,59 @@
+.d-cmpstn
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 10
+  max-width: 50%
+  &__box
+    position: absolute
+    background-image: url('../img/dc-sprite.png')
+    background-position: 0 0
+    width: 353px
+    height: 335px
+    bottom: -5rem
+    left: -7rem
+    z-index: 10
+  &__box-top
+    position: absolute
+    background-image: url('../img/dc-sprite.png')
+    background-position: -353px 0
+    width: 321px
+    height: 301px
+    left: -5rem
+    top: -4rem
+    z-index: 10
+    transform: translate3d(var(--t-motion-x),var(--t-motion-z),0) rotate(var(--t-motion-r))
+    transition: transform .5s ease-in .1s
+    will-change: transform
+  &__percent
+    position: absolute
+    background-image: url('../img/dc-sprite.png')
+    background-position: -539px -301px
+    width: 99px
+    height: 119px
+    top: 50%
+    transform: translate3d(var(--p-motion-z), var(--p-motion-x), 0)
+    transition: transform .5s ease-in .1s
+    will-change: transform
+    right: -5rem
+  &__discount
+    position: absolute
+    background-image: url('../img/dc-sprite.png')
+    background-position: -353px -301px
+    width: 186px
+    height: 212px
+    top: 64%
+    left: 11%
+    transform: translate3d(var(--d-motion-x), var(--d-motion-z), 0)
+    transition: transform .5s ease-in .2s
+    will-change: transform
+  &__bubles
+    position: absolute
+    background-image: url('../img/dc-sprite.png')
+    background-position: 0 -335px
+    width: 313px
+    height: 368px
+    left: -5rem
+    top: -1rem
