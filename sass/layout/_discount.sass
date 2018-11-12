@@ -1,0 +1,79 @@
+.discounts
+  padding: 15rem 0
+  background: url('../img/roofs-bg-l.png'), url('../img/roofs-bg-r.png'), linear-gradient(to right, $hero-bg 0, $hero-bg 50%, $discount-bg 50%, $discount-bg 100%)
+  background-repeat: no-repeat
+  background-position: 0 center, 100% center
+  background-size:  auto
+  &__wrap
+    display: flex
+    max-width:  120rem
+    margin: 0 auto
+    box-shadow: 0 37px 72px -20px $dark-shadow
+    position: relative
+    .d-top
+      position: absolute
+      width: 53.5rem
+      height: 32.1rem
+      background: url('../img/dah-form.png')
+      top: -7rem
+      right: -15rem
+      z-index: 5
+      transition: .2s
+  &__col
+    max-width: 50%
+    flex: 0 0 50%
+    position: relative
+    z-index: 1
+    &--right
+      background:  $text-dark
+      padding: 8rem 8rem 8rem 5rem
+
+      h2
+        color: $red
+        font: 10rem/1 'gmh'
+        margin: 0 0 8rem 3rem
+      p
+        font: 4.8rem/1 'gml'
+        color: $white
+        margin: 0 0 8rem 3rem
+      span
+        &:last-child
+          display: block
+          text-align: right
+      h3
+        font: 3.2rem/1 'gmh'
+        margin: 0
+        color: $white
+        text-align: right
+        display: inline-block
+
+      .skew-btn
+        max-width: 32rem
+        padding-left: 3rem
+        transition: padding .3s ease-in
+        position: absolute
+        bottom: 7.7rem
+        right: -4rem
+        &::after
+          right: 4rem
+          top: 1.2rem
+        &:hover
+          padding-left: 8rem
+    &--left
+      background: $white
+      padding: 8rem 2.5rem 8rem 20rem
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      h2
+        font: 4.8rem/1 'gmh'
+        position: relative
+        z-index: 12
+        span
+          color: $red
+      p
+        font: 3.2rem/1 'gmh'
+        text-align: right
+        span
+          color: $red
+

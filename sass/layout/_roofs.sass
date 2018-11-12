@@ -1,0 +1,68 @@
+.roofs
+  padding: 5rem 0 10rem
+  background: url('../img/roofs-bg-l.png') no-repeat, url('../img/roofs-bg-r.png') no-repeat
+  background-position: 0 0, 100% 0
+  .container
+    @include make-container($container-desktop)
+  &__title
+    width: 42rem
+    height: 42rem
+    margin: 0 auto
+    background: url('../img/roofs-stripped-bg.png')
+    position: relative
+    text-align: center
+    padding-top: 22rem
+    p
+      font: 1.8rem/1.5 'gm'
+      color: $red
+      text-align: center
+      margin: 0 auto
+  &__title-group
+    position: absolute
+    width: 77rem
+    top: 9rem
+    left: 50%
+    transform: translate(-50%)
+    h2
+      font: 6rem/1 'gmeb'
+      span
+        color: $red
+    h3
+      font: 3rem/1 'gmeb'
+  &__list
+    @include list-default(0)
+    display: flex
+    justify-content: space-between
+  &__card
+    max-width: 36.6rem
+    background: linear-gradient(-45deg, $white 20%, $hero-bg 0%)
+    padding: 9rem 5rem 6rem
+    position: relative
+    margin-top: 12rem
+    &-quality
+      position: absolute
+      top: -7.5rem
+      left: 50%
+      transform: translate(-50%)
+      width: 15rem
+      height: 15rem
+      img
+        max-width: 100%
+    &-title
+      font: 1.8rem/1 'gmeb'
+      text-align: center
+      margin-bottom: 3rem
+      span
+        color: $red
+        display: block
+        margin-top: 1rem
+    &-text
+      font: 1.5rem/1.5 'gm'
+      margin-bottom: 3rem
+    &-list
+      padding: 0
+      margin: 0
+      font: 1.3rem/1.5 'gm'
+      li
+        &:not(:last-child)
+          margin-bottom: .5rem
