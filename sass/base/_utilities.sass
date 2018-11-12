@@ -1,2 +1,42 @@
 html
   font-size: 10px
+
+[data-aos='lider-list']
+  opacity: 0
+  transition: opacity .5s cubic-bezier(.56, .3, .16, .7)
+  &.aos-animate
+    opacity: 1
+
+.stripped-border
+  @include pseudo(b)
+    width: calc(100% - 4rem)
+    height: calc(100% - 4rem)
+    background: $white
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  height: 100%
+  background: linear-gradient(135deg, $logo-border 25%, transparent 0, transparent 50%, $logo-border 0, $logo-border 75%, transparent 0)
+  background-size: 5px 5px
+  position: relative
+  margin: 0 auto
+
+.dotted-divider
+  @include pseudo(b)
+    border-bottom: .6rem dotted $logo-border
+    width: 100%
+    bottom: 0
+  @include pseudo(a)
+    border-bottom: .6rem dotted $red
+    width: 100%
+    bottom: 0
+    right: 0
+    // sass-lint:disable no-trailing-zero
+    transition: width 1s cubic-bezier(.84, -.2, .0, .99)
+  width: 15rem
+  position: relative
+  height: .6rem
+  &.aos-animate
+    // sass-lint:disable nesting-depth
+    &::after
+      width: .6rem

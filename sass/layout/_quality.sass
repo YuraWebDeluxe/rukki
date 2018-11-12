@@ -1,0 +1,28 @@
+.quality
+  padding: 15rem 0
+  background: url('../img/t-contur.png'), url('../img/t-contur.png')
+  background-repeat: no-repeat
+  background-position: 95% 5%, 5% 95%
+
+  .container
+    @include make-container(138rem)
+  &__decor
+    width: 45rem
+    max-width: 100%
+    &-img
+      position: absolute
+      right: -37%
+      top: -9%
+      transform: translate(0, 0)
+      transition: transform .1s ease-in-out
+  &__content
+    max-width: 35rem
+    height: 100%
+    margin: 0 auto
+  &__title
+    font: 4.8rem/1 'gmh'
+    margin: 0
+  &__text
+    font: 1.8rem/1.5 'gml'
+  .dotted-divider
+    margin: 6rem 0
