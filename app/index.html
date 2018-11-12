@@ -9,6 +9,12 @@
       <link rel="icon" href="favicon.ico">
       <meta name="theme-color" content="#000">
       <link rel="stylesheet" href="css/main.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
     </head>
   <body>
     <section class="hero">
@@ -42,7 +48,7 @@
         </div>
 
         <div class="hero__composition">
-          <img src="img/hero-composition/house.png" class="house">
+          <img src="img/hero-composition/house.png" alt="house" class="house">
 
           <ul class="quality-list">
             <li><img src="img/quality-30.png" alt="quality"></li>
@@ -55,13 +61,156 @@
 
     <section class="why-ruukki">
       <div class="container">
-        <div class="col">
-          <h2 class="">Чому<span>Покрівлі Rukki - <span>найкращі</span>?</span></h2>
+        <div class="row">
+          <div class="col">
+            <h2 class="why-ruukki__title">Чому <span>Покрівлі Rukki - <span>найкращі</span>?</span></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="why-ruukki__wrap">
+              <div class="why-ruukki__col why-ruukki__col--left">
+                <h3>Інша черепиця</h3>
+                <ul>
+                  <li>
+                    <h4>Відсутність <br> власних виробничих ліній</h4>
+                    <div class="w-divider"></div>
+                    <p>Орієнтуючись на лідерів ринку, вітчизняні
+    підприємства використовують зарубіжні (фінські, італійські)
+    виробничі лінії, бо власних таких ліній в Україні немає.</p>
+                  </li>
+                  <li>
+                    <h4>Відсутність <br> технологій полімерних покриттів</h4>
+                    <div class="w-divider"></div>
+                    <p>Використовують стандартні бюджетні варіанти 
+    (поліестер, поліуретан). Термін гарантійної служби такого
+    покриття близько 10 років.</p>
+                  </li>
+                  <li>
+                    <h4>Низька якість металопрокату</h4>
+                    <div class="w-divider"></div>
+                    <p>Металопрокат, що використовують виробники поставляється з різних країн – індійський, китайський, український, словацький. Порівняно з фінським, такий металопрокат  має меншу товщину.</p>
+                  </li>
+                  <li>
+                    <h4>Тонкий захисний шар цинку</h4>
+                    <div class="w-divider"></div>
+                    <p>Як і товщина металу, шар захисного цинкового покриття у фінського металопрокату найбільший: в українського та словацького металу він коливається у межах 140-160 г/м2, а у китайського – до 120 г/м2.</p>
+                  </li>
+                  <li>
+                    <h4>Сумнівне маркування</h4>
+                    <div class="w-divider"></div>
+                    <p>Лише деякі виробники маркують свою продукцію. У технічному паспорті не завжди зазначена країна походження матеріалів, що дозволяє під однією маркою випускати металочерепицю з дорогого та дешевого матеріалу</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="why-ruukki__col why-ruukki__col--right">
+                <h3>Ruukki <span>черепиця</span></h3>
+                <ul>
+                  <li>
+                    <h4>Відсутність <br> власних виробничих ліній</h4>
+                    <div class="w-divider"></div>
+                    <p>Орієнтуючись на лідерів ринку, вітчизняні
+    підприємства використовують зарубіжні (фінські, італійські)
+    виробничі лінії, бо власних таких ліній в Україні немає.</p>
+                  </li>
+                  <li>
+                    <h4>Відсутність <br> технологій полімерних покриттів</h4>
+                    <div class="w-divider"></div>
+                    <p>Використовують стандартні бюджетні варіанти 
+    (поліестер, поліуретан). Термін гарантійної служби такого
+    покриття близько 10 років.</p>
+                  </li>
+                  <li>
+                    <h4>Низька якість металопрокату</h4>
+                    <div class="w-divider"></div>
+                    <p>Металопрокат, що використовують виробники поставляється з різних країн – індійський, китайський, український, словацький. Порівняно з фінським, такий металопрокат  має меншу товщину.</p>
+                  </li>
+                  <li>
+                    <h4>Тонкий захисний шар цинку</h4>
+                    <div class="w-divider"></div>
+                    <p>Як і товщина металу, шар захисного цинкового покриття у фінського металопрокату найбільший: в українського та словацького металу він коливається у межах 140-160 г/м2, а у китайського – до 120 г/м2.</p>
+                  </li>
+                  <li>
+                    <h4>Сумнівне маркування</h4>
+                    <div class="w-divider"></div>
+                    <p>Лише деякі виробники маркують свою продукцію. У технічному паспорті не завжди зазначена країна походження матеріалів, що дозволяє під однією маркою випускати металочерепицю з дорогого та дешевого матеріалу</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+              <div class="section-form">
+                <h2 class="section-form__title">Покрівля  Ruukki </h2>
+                <h3 class="section-form__subtitle">- ваша  інвестиція в майбутнє!</h3>
+                <p class="section-form__text">Залишайте заявку, і отримайте Безкоштовну консультацію від провідного спеціаліста!</p>
+                <div class="section-form__form">
+                  <form>
+                    <div class="input-wrap input-wrap--text">
+                    <input type="text" name="your-phone">
+                    <label>Ваш телефон</label>
+                  </div>
+                  <div class="input-wrap input-wrap--submit">
+                    <input type="submit" value="Залишити заявку">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+
+          </div>
         </div>
       </div>
     </section>
+    
+    <section class="contacts">
+      <ul class="contacts-list">
+        <li class="contacts-list__item">
+          <h3 class="contacts-list__title contacts-list__title--mail">Напишіть <br> нам!</h3>
+          <div class="contacts-list__text">
+            <p>daxif@ukr.net</p>
+            <div class="contacts-list__icons">
+              <a class="contacts-list__icon contacts-list__icon--facebook" href="#"></a>
+              <a class="contacts-list__icon contacts-list__icon--instagram" href="#"></a>
+            </div>
+          </div>
+        </li>
+        <li class="contacts-list__item">
+          <h3 class="contacts-list__title contacts-list__title--call">Подзвоніть <br> нам!</h3>
+          <div class="contacts-list__text">
+            <p>(0342) 71 80 38 <br> (099) 066 69 79 <br>(067) 336 87 64</p>
+          </div>
+        </li>
+        <li class="contacts-list__item">
+          <h3 class="contacts-list__title contacts-list__title--location">Завітайте <br> до нас!</h3>
+          <div class="contacts-list__text">
+            <p>м.Івано-Франківськ <br> вул. Джохара Дудаєва, 21</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section-map">
+      <section class="map" id="map"></section>
+    </section>
 
     <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="img/logo-footer.png" alt="Rukki">
+                <p>Офіційний представник <br> в західному регіоні</p>
+            </div>
+            <div class="footer__company">
+                <p>Розробка сайтів</p>
+                <img src="img/web-deluxe.png" alt="WebDeluxe">
+            </div>
+        </div>
+    </footer>
+
+
+
+ <!--    <footer class="footer">
       <div class="footer__logo">
         <img src="img/logo-footer.png" alt="rukki">
         <p>Офіційний представник <br>в західному регіоні </p>
@@ -72,7 +221,10 @@
       </div>
     </footer>
     
-    <div class="footer"></div>
+    <div class="footer"></div> -->
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN5KNUK2HZvjBrIpoiYmu_TLV91vnUTVg&callback=initMap" type="text/javascript"></script>
+
     <script src="js/libs.js"></script>
     <script src="js/common.js"></script>
   </body>

@@ -1,0 +1,50 @@
+.contacts
+  padding: 5.5rem 0
+.contacts-list
+  @include list-default(0)
+  display: flex
+  justify-content: space-around
+  list-style-type: none
+  &__item
+    display: flex
+    font: 1.6rem/1.5 gm
+    padding: 0 5rem 0 12rem
+    &:not(:last-child)
+      border-right: .6rem $logo-border dotted
+  &__title
+    position: relative
+    font: 2.4rem/1 gmh
+    color: $red
+    margin: 0 3rem 0 0
+    &::before
+      content: ''
+      width: 3rem
+      height: 4rem
+      position: absolute
+      left: -6rem
+    &--mail
+      &::before
+        background: url('../img/contacts-icons/mail.png') no-repeat center
+    &--call
+      &::before
+        background: url('../img/contacts-icons/call.png') no-repeat center
+    &--location
+      &::before
+        background: url('../img/contacts-icons/location.png') no-repeat center
+  &__icons
+    display: flex
+  &__icon
+    position: relative
+    &:not(:last-child)
+      margin: 0 1.5rem 0 0
+    &::before
+      content: ''
+      height: 3rem
+      width: 3rem
+      position: absolute
+    &--facebook
+      &::before
+        background: url('../img/contacts-icons/facebook.png') no-repeat center
+    &--instagram
+      &::before
+        background: url('../img/contacts-icons/instagram.png') no-repeat center

@@ -1,0 +1,73 @@
+.why-ruukki
+  padding: 10rem 0
+  .container
+    @include make-container(143rem)
+  &__title
+    @include pseudo(b)
+      right: 0
+      width: 165px
+      height: 10.7rem
+      background: url('../img/t-contur.png') no-repeat center
+      background-size: 100%
+    margin: 0
+    font: 6rem/1 'gmeb'
+    color: $text-dark
+    position: relative
+    & > span
+      color: $red
+      display: block
+      font-size: 4rem
+      span
+        color: $text-dark
+  &__wrap
+    display: flex
+    margin-top: 10rem
+  &__col
+    padding: 8rem 8rem 35rem
+    h3
+      font: 3.6rem/1 'gmeb'
+      color: $text-dark
+      margin-bottom: 8rem
+      span
+        color: $red
+    ul
+      @include list-default(0)
+      li
+        position: relative
+        &:not(:last-child)
+          margin-bottom: 5rem
+    p
+      font: 1.6rem/1.5 'gm'
+      margin: 0
+    h4
+      font: 2rem/1 'gmb'
+      margin: 0
+    &--left
+      background: $hero-bg
+      text-align: right
+      h3
+        text-align: left
+    &--right
+      border: 2.5rem solid $hero-bg
+      border-left: 0
+      padding: 5.5rem 5.5rem 7.5rem 8rem
+      h3
+        text-align: right
+      h4
+        color: $red
+      li
+        @include pseudo(a)
+          width: 4rem
+          height: 4rem
+          background: url('../img/wr-divider.png')
+          top: 2rem
+          left: -10rem
+  .section-form
+    margin-top: -20rem
+.w-divider
+  background: url('../img/wr-l-divider.png')
+  width: 4.2rem
+  height: 1.1rem
+  display: inline-block
+  margin: 1.2rem 0 .5rem
+  
