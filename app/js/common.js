@@ -73,6 +73,12 @@ $(document).ready(function() {
     }
   })
 
+  $('.choose-style__item').click(function() {
+    var roof = $(this).attr('data-roof');
+    console.log(roof);
+    $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
+  })
+
   instance3.start();
 
   $('.discounts').on('mousemove', function(e){

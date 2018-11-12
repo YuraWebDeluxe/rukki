@@ -1,0 +1,28 @@
+.delivery
+  height: 105rem
+  background: url('../img/Ukraine.png') no-repeat 100% 0%
+  position: relative
+  &__img
+    position: absolute
+    bottom: 1rem
+  &__container
+    @include make-container(143rem)
+    display: flex
+    justify-content: flex-end
+    margin: 0 auto
+    height: 100%
+  &__row
+    display: flex
+    flex-direction: column
+    width: 70rem
+    height: 40rem
+    margin: 15rem 0 0
+  &__title
+    font: 7.2rem/1 gmh
+    color: $red
+    margin: 0 0 6rem
+  &__subtitle
+    font: 5rem/1.2 gm
+    align-self: flex-end
+  &__btn
+    margin: auto 3rem 0 auto
