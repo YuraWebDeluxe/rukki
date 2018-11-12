@@ -1,8 +1,9 @@
 .order-process
-  padding: 15rem 0
+  padding: 5rem 0
   position: relative
   .container
-    @include make-container(140.1rem)
+    @include make-container(142rem)
+  $this: &
   &__title
     font: 4.8rem/1 'gmh'
     width: 70rem
@@ -12,4 +13,52 @@
       color: $red
       display: block
       text-align: right
-			
+  &__list
+    @include list-default(0)
+    display: flex
+    flex-direction: column
+    counter-reset: owldots
+    margin-top: -10rem 
+  &__item
+    @include pseudo(a)
+      height: 7rem
+      width: 7rem
+      top: 0
+      left: 5rem
+      z-index: 2
+    max-width: 42rem
+    position: relative
+    padding-left: 14rem
+    height: 7rem
+    background-position: center
+    &::before
+      counter-increment: owldots
+      content: counter(owldots)
+      background: linear-gradient(135deg, $logo-border 25%, transparent 0, transparent 50%, $logo-border 0, $logo-border 75%, transparent 0)
+      background-size: 5px 5px
+      display: block
+      height: 7rem
+      width: 7rem
+      position: absolute
+      left: 0
+      font: 7rem/1 'gmh'
+      text-align: center
+      line-height: 7rem
+      color: $logo-border
+      @supports (-webkit-background-clip: text)
+        -webkit-background-clip: text
+        color: transparent
+    h3
+      font: 1.8rem/1 'gmh'
+      color: $red
+      margin-bottom: 1rem
+    p
+      color: $text-dark
+      font: 1.6rem/1.2 'gm'
+    &:not(:last-child)
+      margin-bottom: 2rem
+    @for $i from 1 through 6
+      &:nth-child(#{$i})
+        &::after
+          background:  url('../img/order-process/op-#{$i}.png') no-repeat center, $red
+        margin-left:  (14% * $i) - 14%

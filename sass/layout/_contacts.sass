@@ -3,34 +3,36 @@
 .contacts-list
   @include list-default(0)
   display: flex
-  justify-content: space-around
-  list-style-type: none
+  justify-content: center
+  padding: 0 1.5rem
   &__item
     display: flex
     font: 1.6rem/1.5 gm
-    padding: 0 5rem 0 12rem
+    max-width: 56rem
+    padding: 0 7rem
     &:not(:last-child)
       border-right: .6rem $logo-border dotted
   &__title
     position: relative
     font: 2.4rem/1 gmh
     color: $red
-    margin: 0 3rem 0 0
+    margin: 0 2rem 0 0
+    padding-left: 6rem
     &::before
       content: ''
       width: 3rem
       height: 4rem
       position: absolute
-      left: -6rem
+      left: 0rem
     &--mail
       &::before
-        background: url('../img/contacts-icons/mail.png') no-repeat center
+        background: url('../img/contacts-icons/mail.png') no-repeat center / 100%
     &--call
       &::before
-        background: url('../img/contacts-icons/call.png') no-repeat center
+        background: url('../img/contacts-icons/call.png') no-repeat center / 100%
     &--location
       &::before
-        background: url('../img/contacts-icons/location.png') no-repeat center
+        background: url('../img/contacts-icons/location.png') no-repeat center / 100%
   &__icons
     display: flex
   &__icon
