@@ -68,13 +68,13 @@
       background: $red
       overflow: hidden
       &::after
-        font-family: 'FontAwesome'
-        content: '\2192'
+        font-family: 'im'
+        content: '\ea3c'
         color: $text-dark
         display: inline-block
         font-size: 2.5rem
         position: absolute
-        top: 1rem
+        top: 1.1rem
         right: 8%
       &::before
         content: ''
@@ -93,16 +93,19 @@
         background-color: transparent
         border: 0
         color: $white
-        font: 1.8rem/1 'gmm'
-        padding-left: 6rem
+        font: 1.6rem/1 'gm'
+        padding-left: 5rem
         text-align: left
         position: absolute
         z-index: 3
         transition: .3s ease-in padding
+        font-family: 'gm', monospace
+        letter-spacing: .1rem
+        text-transform: uppercase
     &:hover
       [type='submit']
         cursor: pointer
-        padding-left: 8rem
+        padding-left: 6rem
       &::before
         left: 100%
         width: 25%

@@ -1,0 +1,61 @@
+.lider
+  padding: 15rem 0
+  .container
+    @include make-container(138rem)
+  &__title
+    text-align: right
+    font: 4.5rem/1 'gmm'
+    color: $text-dark
+    margin-bottom: 8rem
+    max-width: 54rem
+    span
+      color: $red
+      font-family: 'gmh'
+  &__list
+    @include list-default(0)
+    max-width: 54rem
+    font: 1.8rem/1 'gmb'
+    color: $red
+    li
+      @include pseudo(b)
+        border-bottom: .6rem dotted $logo-border
+        width: 100%
+        bottom: 0
+      @include pseudo(a)
+        border-bottom: .6rem dotted $red
+        width: 100%
+        bottom: 0
+        right: 0
+        // sass-lint:disable no-trailing-zero
+        transition: width 1s cubic-bezier(.84, -.2, .0, .99)
+      position: relative
+      padding-bottom: 2rem
+      &.aos-animate
+        // sass-lint:disable nesting-depth
+        &::after
+          width: .6rem
+      &:not(:last-child)
+        margin-bottom: 4rem
+  &__catalog
+    max-width: 43rem
+    &-img
+      position: absolute
+      max-width: 70rem
+      right: -37%
+      top: 19%
+      transform: translate(0, 0)
+      transition: transform .1s ease-in-out
+    .skew-btn
+      bottom: 8rem
+      right: -10rem
+      position: absolute
+      background: $red
+      text-align: center
+      padding-right: 4rem
+      max-width: 36.6rem
+      &::after
+        color: $text-dark
+        right: 2rem
+      &::before
+        background: $text-dark
+      
