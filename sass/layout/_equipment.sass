@@ -1,0 +1,73 @@
+.equipment
+  padding: 12rem 0
+  &__title
+    position: absolute
+    right: 10rem
+    top: 9rem
+    &--primary
+      text-align: right
+      display: block
+      font: 4.8rem/1 gmh
+      color: $red
+    &--secondary
+      display: block
+      font: 4.5rem/1 gmm
+  &__container
+    @include make-container(127.6rem)
+    position: relative
+    margin: 0 auto
+    background: url('../img/equipment-bg.png') no-repeat right center
+  &__list
+    @include list-default(0)
+    width: 30%
+    margin: 0 0 9rem
+  &__item
+    position: relative
+    display: flex
+    align-items: center
+    padding: 0 0 1.5rem
+    &:not(:last-child)
+      margin: 0 0 7rem
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      display: block
+      border-bottom: .6rem dotted $logo-border
+    &::before
+      bottom: 0
+      left: 8rem
+      height: .6rem
+      width: 100%
+    &::after
+      bottom: 0
+      height: .6rem
+      transform: rotate(-135deg)
+      transform-origin: calc(100% + 4.2rem) -1.5rem
+      right: 0
+    &:nth-child(1)
+      &::after
+        width: 100%
+    &:nth-child(2)
+      &::after
+        width: 14%
+    @for $i from 1 through 4
+      &:nth-child(#{$i}) .equipment__icon::after
+        background: url('../img/equipment/eqi-#{$i}.png') no-repeat center
+  &__icon
+    position: relative
+    width: 4rem
+    height: 4rem
+    margin: 0 4rem 0 0
+    &::after
+      content: ''
+      position: absolute
+      width: 4rem
+      height: 4rem
+  &__img
+    position: absolute
+    bottom: 0
+    left: 60%
+    transform: translateX(-50%)
+  &__item-title
+    font: 1.8rem/1 gmb
