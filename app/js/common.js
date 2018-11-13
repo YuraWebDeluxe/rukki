@@ -131,3 +131,25 @@ var map = L.map('map').setView(new L.LatLng(48.903730, 24.716918), 17);
   map.addLayer(marker2);
 
 })
+
+
+function calculator() {
+  const ctab = $('.calculator__tab');
+  const clink = $('.calculator__tab').find('.nav-link');
+
+  clink.on('click', function(e) {
+    $(this).next('input[type="radio"]').trigger('click')
+  })
+}
+
+calculator();
+
+
+
+$('.comparator__input').each(function(){
+  $(this).on('mousemove touchmove click', function(){
+    var sizeDiv = $(this).val(); 
+  $(this).parents('.type-view__compare').find('.comparator__original').css('width',sizeDiv + '%');    
+  $(this).parents('.type-view__compare').find('.comparator__cursor').css('left',sizeDiv + '%'); 
+});
+})
