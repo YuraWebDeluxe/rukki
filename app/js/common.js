@@ -5,7 +5,25 @@ $(document).ready(function() {
     })
   });
 
-    $('.choose-style__item').click(function() {
+  
+
+  $('.rewiews__adress-list').slick({
+    slidesToShow: 5,
+    infinite: false,
+    vertical: true,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: false,
+    draggable: true,
+    prevArrow: $('.adress-nav__top'),
+    nextArrow: $('.adress-nav__bottom'),
+  });
+
+
+
+
+  $('.choose-style__item').click(function() {
     var roof = $(this).attr('data-roof');
     console.log(roof);
     $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
@@ -15,6 +33,7 @@ $(document).ready(function() {
     loop:true,
     autoplay: true,
     nav:true,
+    padding: 0,
     smartSpeed: 500,
     autoplaySpeed: 1000,
     lazyLoad:true,
@@ -79,6 +98,13 @@ $(document).ready(function() {
     }
   })
 
+  $('.rewiews__adress-item').click(function() {
+    var selectedElement = $(this).attr('data-toggle');
+
+    $('#' + selectedElement).siblings().css('display', 'none');
+    $('#' + selectedElement).fadeIn();
+    console.log(selectedElement);
+  });
 
 
   instance3.start();

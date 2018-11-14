@@ -152,6 +152,7 @@ gulp.task('scripts', function() {
 		'./libs/owl/owl.carousel.min.js',
 		'./libs/basicScroll.min.js',
 		'./libs/config.js',
+		'./libs/slick/slick.js',
 		])
 		.pipe(concat('libs.js'))
 		.pipe(uglify()) //Minify libs.js

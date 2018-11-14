@@ -1,0 +1,22 @@
+.adress-nav
+  &__top,
+  &__bottom
+    position: absolute
+    left: 6rem
+    &::after
+      width: 4rem
+      height: 4rem
+      font-size: 3rem
+      color: $white
+    &:hover
+      cursor: pointer
+  &__top
+    top: 10%
+    &::after
+      font-family: im
+      content: '\ea3a'
+  &__bottom
+    bottom: 15%
+    &::after
+      font-family: im
+      content: '\ea3e'
