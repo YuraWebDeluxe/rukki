@@ -5,6 +5,12 @@ $(document).ready(function() {
     })
   });
 
+    $('.choose-style__item').click(function() {
+    var roof = $(this).attr('data-roof');
+    console.log(roof);
+    $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
+  });
+
   $('.sertificats__list').owlCarousel({
     loop:true,
     autoplay: true,
@@ -72,6 +78,8 @@ $(document).ready(function() {
       }
     }
   })
+
+
 
   instance3.start();
 

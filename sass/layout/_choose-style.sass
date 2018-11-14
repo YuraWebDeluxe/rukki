@@ -1,0 +1,46 @@
+.choose-style
+  padding: 9rem 0
+  background: url('../img/choose-style.png') no-repeat left center
+  &__container
+    display: flex
+  &__info
+    flex: 50%
+    padding: 0 0 0 9rem
+  &__title
+    font: 4.8rem/1 gmh
+    margin: 0 0 8rem
+  &__subtitle
+    font: 2.5rem/1.5 gml
+    margin: 0 0 7rem
+    +mq(1300px)
+      margin: 0 0 4rem
+  &__list
+    @include list-default(0)
+    max-width: 48rem
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin: 0 0 7rem
+  &__item
+    width: 7rem
+    height: 7rem
+    border-radius: 50%
+    margin: 0 0 2rem
+    &:hover
+      cursor: pointer
+    @each $color-name, $color-code in $choose-style-colors
+      $i: index(($choose-style-colors), ($color-name $color-code))
+      &:nth-child(#{$i})
+        background: $color-code
+  & .skew-btn
+    width: 100%
+    max-width: 49rem
+  &__img
+    height: 649px
+    flex: 50%
+    background: url('../img/house.png') no-repeat right top
+@each $class-name, $img-link in $choose-roof
+  .#{$class-name}
+    background: url(#{$img-link}) no-repeat right top, url('../img/house.png') no-repeat right top
+    +mq(1100px)
+      background: url(#{$img-link}) no-repeat center top, url('../img/house.png') no-repeat center top

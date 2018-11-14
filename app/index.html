@@ -12,7 +12,9 @@
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
    crossorigin=""/>
-    </head>
+
+  </head>
+
   <body>
     <section class="hero">
       <header class="header">
@@ -250,6 +252,36 @@
         </div>
       </div>
     </section>
+
+    <section class="equipment">
+      <div class="equipment__container">  
+        <h2 class="equipment__title">
+          <span class="equipment__title--primary">Додаткова</span>
+          <span class="equipment__title--secondary">комплектація для Вас</span>
+        </h2>
+        <ul class="equipment__list">
+          <li class="equipment__item">
+            <div class="equipment__icon"></div>
+            <h3 class="equipment__item-title">Вентиляційні системи</h3>
+          </li>
+          <li class="equipment__item">
+            <div class="equipment__icon"></div>
+            <h3 class="equipment__item-title">Снігозатримувачі</h3>
+          </li>
+          <li class="equipment__item">
+            <div class="equipment__icon"></div>
+            <h3 class="equipment__item-title">Водостічні системи</h3>
+          </li>
+          <li class="equipment__item">
+            <div class="equipment__icon"></div>
+            <h3 class="equipment__item-title">Аксесуари</h3>
+          </li>
+        </ul>
+        <button class="skew-btn">Переглянути каталог</button>
+        <img class="equipment__img" src="img/equipment/eqi-house.png" alt="">
+      </div>
+    </section>
+
     <section class="calculator">
       <div class="container">
         <div class="row">
@@ -422,6 +454,7 @@
         </div>
       </div>
     </section>
+
     <section class="discounts">
       <div class="discounts__wrap">
         <div class="d-top"></div>
@@ -468,6 +501,46 @@
       </div>
     </section>
 
+    <section class="delivery">
+      <div class="delivery__container">
+        <div class="delivery__row">
+          <h2 class="delivery__title">Безкоштовна</h2>
+          <h3 class="delivery__subtitle">доставка по Західній <br> Україні</h3>
+          <div class="delivery__btn">
+            <button class="skew-btn">Переглянути каталог</button>
+          </div>
+        </div>
+      </div>
+      <img data-aos="fade-right" data-aos-delay="300" data-aos-offset="400"
+     data-aos-duration="500" src="img/delivery-car.png" class="delivery__img" alt="">
+    </section>
+
+    <section class="choose-style">
+      <div class="choose-style__container">
+        <div class="choose-style__info">
+          <h2 class="choose-style__title">Оберіть Ваш стиль <span class="u-text-red">та колір!</span></h2>
+          <p class="choose-style__subtitle">Широка та неповторна палітра кольорів,<br> розроблена для найбільш вибагливих домовласників. <br> Підкресліть, найкращі риси Вашого будинку.</p>
+          <ul class="choose-style__list">
+            <li class="choose-style__item" data-roof="roof-1"></li>
+            <li class="choose-style__item" data-roof="roof-2"></li>
+            <li class="choose-style__item" data-roof="roof-3"></li>
+            <li class="choose-style__item" data-roof="roof-4"></li>
+            <li class="choose-style__item" data-roof="roof-5"></li>
+            <li class="choose-style__item" data-roof="roof-6"></li>
+            <li class="choose-style__item" data-roof="roof-7"></li>
+            <li class="choose-style__item" data-roof="roof-8"></li>
+            <li class="choose-style__item" data-roof="roof-9"></li>
+            <li class="choose-style__item" data-roof="roof-10"></li>
+            <li class="choose-style__item" data-roof="roof-11"></li>
+            <li class="choose-style__item" data-roof="roof-12"></li>
+          </ul>
+          <button class="skew-btn">Замовити черепицю улюбленого кольору<span class="icon-right"></span></button>
+        </div>
+        <div id="changeRoof" class="choose-style__img">
+        </div>
+      </div>
+    </section>
+
     <section class="order-process">
       <div class="container">
         <div class="row">
@@ -507,9 +580,6 @@
         </div>
       </div>
     </section>
-
-
-    <section class="delivery"></section>
 
     <section class="assembling">
       <div class="container">
@@ -647,10 +717,13 @@
     </footer>
 
 
+
     <script src="js/libs.js"></script>
     <script src="js/common.js"></script>
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
    crossorigin=""></script>
+
+    </head>
   </body>
 </html>

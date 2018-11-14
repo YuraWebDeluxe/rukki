@@ -19,3 +19,16 @@
 @mixin make-container($desktop: $container-desktop)
   max-width: $desktop
   padding: 0 1rem
+
+//  Mixin for media queries
+@mixin mq($device-w)
+  @if map-has-key($media-breakpoints, $device-w)
+    @media (max-width: #{map-get($media-breakpoints, $device-w)})
+      @content
+  @else
+    @media (max-width: $device-w)
+      @content
+
+@mixin minq($device-w)
+  @media (min-width: $device-w)
+    @content
