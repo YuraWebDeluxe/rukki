@@ -1,0 +1,43 @@
+.type-view
+  display: flex
+  &__info
+    flex: 0 0 40rem
+    padding: 4rem
+  &__step
+    font: 2.8rem/1 'gmeb'
+    color: $red
+    sub
+      font-size: 2rem
+      color: $text-dark
+  &__step-name
+    font: 2.4rem/1 'gmb'
+    margin: 0
+  &__title
+    font: 3rem/1 'gmb'
+    color: $red
+    margin: 3rem 0
+  &__list
+    @include list-default(0)
+    font: 1.5rem/1.5 'gm'
+    li
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        width: 1rem
+        height: 1rem
+        background: $red
+        top: .7rem
+        left: -3rem
+      &:not(:last-child)
+        margin-bottom: 2rem
+      img
+        display: block
+        margin-top: 2rem
+    .r-gift
+      color: $red
+      &::before
+        background: url('../img/gift-calc.png')
+        background-size: 100% 100%
+        width: 1.1rem
+        height: 1.5rem

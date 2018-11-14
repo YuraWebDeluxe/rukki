@@ -1,0 +1,64 @@
+.calculator
+  padding: 10rem 0
+  .container
+    @include make-container(135rem)
+  &__view
+    &--first
+      .type-view
+        background: $white
+  &__title
+    font: 3.3rem/1 'gmeb'
+    max-width: 32rem
+    span
+      color: $red
+      font-size: 4rem
+  &__tab
+    max-width: 93rem
+    margin-left: auto
+    justify-content: space-between
+    border-bottom: 0
+    margin: 0 0 2.5rem auto
+    li
+      flex-basis: 18%
+      border: 0
+      position: relative
+      .nav-link
+        font-size: 1.4rem
+        font-family: 'gmeb'
+        text-transform: uppercase
+        color: $text-dark
+        height: 6rem
+        line-height: 6rem
+        width: 100%
+        background: $hero-bg
+        padding: 0
+        text-align: center
+        border: 0
+      .nav-link.active
+        background: darken($hero-bg, 5%)
+      [type='radio']
+        display: none
+      &:nth-child(2)
+        &::after
+          content: ''
+          background: url('../img/gift-calc.png')
+          background-size: cover
+          width: 2rem
+          height: 2.5rem
+          position: absolute
+          top: -2.5rem
+          right: 0
+      &:last-child
+        &::before
+          content: 'New'
+          width: 5rem
+          height: 2.5rem
+          text-align: center
+          background: $red
+          position: absolute
+          font: 1.4rem/2.5rem 'gm'
+          color: $white
+          right: 0
+          top: -2.5rem
+  .tab-content
+    background: $hero-bg
