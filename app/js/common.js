@@ -101,6 +101,18 @@ $(document).ready(function() {
 
   AOS.init();
 
+  $('input[name="square-roof"]').ionRangeSlider({
+    min: 25,
+    max: 500,
+    step: 25,
+    grid: true
+  });
+
+  $('button.js-clc-next').on('click', function(e) {
+      e.preventDefault();
+      $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
+  })
+
 });
 
 // Openlayer map init

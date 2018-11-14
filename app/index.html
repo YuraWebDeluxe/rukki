@@ -17,6 +17,9 @@
 
   <body>
     <section class="hero">
+      <div class="hero__menu">
+        
+      </div>
       <header class="header">
         <div class="header__container">
           <div class="header__logo">
@@ -292,7 +295,7 @@
         <div class="row">
           <div class="col">
             <form>
-              <div class="calculator__view calculator__view--first">
+              <div class="calculator__view calculator__view--first active">
                   <ul class="nav nav-tabs calculator__tab" id="myTab" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active" id="DECCOREY-tab" data-toggle="tab" href="#DECCOREY" role="tab" aria-controls="DECCOREY" aria-selected="true">DECCOREY</a>
@@ -317,7 +320,7 @@
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="DECCOREY" role="tabpanel" aria-labelledby="DECCOREY-tab">
-                                            <div class="type-view">
+                      <div class="type-view">
                         <div class="type-view__info">
                           <p class="type-view__step">Крок 1<sub>/3</sub> </p>
                           <p class="type-view__step-name">Виберіть тип черепицi</p>
@@ -328,6 +331,7 @@
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                           </ul>
+                          <button class="next-step js-clc-next">Наступний крок</button>
                         </div>
                       <div class="type-view__compare">
                         <div class="comparator">
@@ -354,6 +358,7 @@
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                             <li class="r-gift">При замовленні черепиці FINNERA,<br>отримайте в подарунок люк для<br>холодних нежитлових приміщень<br>45х73см<img src="img/r-gift.png" alt="При замовленні черепиці FINNERA, отримайте в подарунок люк для холодних нежитлових приміщень"></li>
+                            <button class="next-step js-clc-next">Наступний крок</button>
                           </ul>
                         </div>
                       <div class="type-view__compare">
@@ -380,7 +385,9 @@
                             <li>Низький профіль надає цій моделі<br>свіжий стильний вигляд;</li>
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
+
                           </ul>
+                          <button class="next-step">Наступний крок</button>
                         </div>
                       <div class="type-view__compare">
                         <div class="comparator">
@@ -407,6 +414,7 @@
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                           </ul>
+                          <button class="next-step js-clc-next">Наступний крок</button>
                         </div>
                       <div class="type-view__compare">
                         <div class="comparator">
@@ -433,6 +441,7 @@
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                             <li>Decorrey виготовляється в класах<br>якості Ruukki 30/Polyester.</li>
                           </ul>
+                          <button class="next-step js-clc-next">Наступний крок</button>
                         </div>
                       <div class="type-view__compare">
                         <div class="comparator">
@@ -448,6 +457,111 @@
                       </div>
                     </div>
                   </div>
+              </div>
+              <div class="calculator__view calculator__view--second">
+                <div class="type-view type-view--second">
+                  <p class="type-view__step">Крок 2<sub>/3</sub> </p>
+                <div class="step-two">
+                  <div class="step-two__color">
+                    <p class="type-view__step-name"><span>1.</span> Виберіть тип черепицi</p>
+                    <ul class="choose-style__list">
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-1" id="roof-1">
+                        <label for="roof-1"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-2" id="roof-2">
+                        <label for="roof-2"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-3" id="roof-3">
+                        <label for="roof-3"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-4" id="roof-4">
+                        <label for="roof-4"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-5" id="roof-5">
+                        <label for="roof-5"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-6" id="roof-6">
+                        <label for="roof-6"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-7" id="roof-7">
+                        <label for="roof-7"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-8" id="roof-8">
+                        <label for="roof-8"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-9" id="roof-9">
+                        <label for="roof-9"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-10" id="roof-10">
+                        <label for="roof-10"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-11" id="roof-11">
+                        <label for="roof-11"></label>
+                      </li>
+                      <li class="choose-style__item">
+                        <input type="radio" name="color-type" value="roof-12" id="roof-12">
+                        <label for="roof-12"></label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="step-two__type">
+                    <p class="type-view__step-name"><span>2.</span> Виберіть тип даху</p>
+                    <ul class="step-two__type-list">
+                      <li>
+                        <input type="radio" name="type-roof" value="roof-type-1" id="type-1">
+                        <label for="type-1">Односкатний дах</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="type-roof" value="roof-type-2" id="type-2">
+                        <label for="type-2">Двоскатний дах</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="type-roof" value="roof-type-3" id="type-3">
+                        <label for="type-3">Багато площинний<br>дах</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="step-two__size">
+                    <p class="type-view__step-name"><span>3.</span> Виберіть розмір даху</p>
+                    <input type="text" name="square-roof" />
+                    <button class="next-step js-clc-next">Наступний крок</button>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="calculator__view calculator__view--third">
+                <div class="type-view type-view--second">
+                  <p class="type-view__step">Крок 3<sub>/3</sub> </p>
+                  <div class="section-form section-form--black section-form--calc">
+                <div class="section-form__form section-form__form--black">
+                  <form>
+                    <div class="input-wrap input-wrap--text">
+                    <input type="text" name="your-name">
+                    <label>Ваше ім'я</label>
+                  </div>
+                    <div class="input-wrap input-wrap--text">
+                    <input type="text" name="your-phone">
+                    <label>Ваш телефон</label>
+                  </div>
+                   
+                  <div class="input-wrap input-wrap--submit">
+                    <input type="submit" value="Розрахувати вартість даху">
+                  </div>
+                </form>
+              </div>
+            </div>
+                </div>
               </div>
             </form>
           </div>
@@ -625,7 +739,7 @@
         <div class="col-md-6">
           <div class="quality__content">
             <h2 class="quality__title">Якість<br>стійкість<br>довговічність</h2>
-            <div class="dotted-divider" data-aos='lider-list'></div>
+            <div class="dotted-divider" data-aos="lider-list"></div>
             <p class="quality__text">Однією з основних переваг покрівель Ruukki
 є наявність високоякісних полімерних покриттів.
 Такі покритття надають поверхні особливої
