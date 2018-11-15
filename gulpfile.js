@@ -153,6 +153,7 @@ gulp.task('scripts', function() {
 		'./libs/basicScroll.min.js',
 		'./libs/ion/ion.rangeSlider.min.js',
 		'./libs/config.js',
+		'./libs/slick/slick.js',
 		])
 		.pipe(concat('libs.js'))
 		.pipe(uglify()) //Minify libs.js

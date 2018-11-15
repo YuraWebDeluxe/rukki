@@ -1,0 +1,38 @@
+.fixed-arrows
+  &__call,
+  &__top
+    width: 6rem
+    height: 6rem
+    position: fixed
+    bottom: 2rem
+    background-color: $red
+    z-index: 1001
+    &:hover
+      cursor: pointer
+  &__call
+    left: 4rem
+    &::after
+      width: 6rem
+      height: 6rem
+      content: ''
+      display: inline-block
+      background: url('../img/phone-fixed.png') no-repeat center
+  &__top
+    right: 4rem
+    opacity: 0
+    visibility: hidden
+    transform: translateX(6rem)
+    transition: opacity .5s, transform .5s, visibility .5s
+    font-size: 2.5rem
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $white
+    &::after
+      display: inline-block
+      content: '\ea3a'
+      font-family: im
+    &--active
+      visibility: visible
+      opacity: 1
+      transform: translateX(0)

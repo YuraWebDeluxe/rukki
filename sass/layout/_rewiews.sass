@@ -1,0 +1,70 @@
+.rewiews
+  display: flex // delete
+  &__col
+    background: url('../img/rewiew-bg.png') no-repeat center // delete
+    background-size: cover // delete
+    padding: 7rem 7rem 6rem 10rem
+    flex: 0 0 50%
+    max-width: 50%
+  &__title
+    font: 4.5rem/1 gmeb
+    color: $red
+  &__subtitle
+    font: 2.4rem/1 gm
+    color: $white
+    margin: 0 0 6rem
+  & .active
+    display: block
+  &__text
+    display: none
+    &:first-child
+      display: block
+    &-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin: 0 0 4rem
+    &-title
+      font: 2.4rem/1 gmh
+      color: $white
+    &-subtitle
+      font: 1.8rem/1 gm
+      color: $red
+    &-date
+      font: 1.8rem/1 gm
+      color: $red
+  &__feedback
+    font: 1.6rem/1.5 gml
+    color: $white
+    text-align: justify
+  &__adress
+    position: relative
+    flex: 0 0 50%
+    align-self: flex-start
+    background: url('../img/rewiew-bg-left.png') no-repeat center
+    background-size: cover
+    padding: 10rem 10rem 15rem 15rem
+    max-width: 50%
+    &-title
+      font: 4.5rem/1 gmeb
+      color: $white
+      margin: 0 0 7rem
+    &-list
+      @include list-default(0)
+    &-item
+      position: relative
+      font: 1.8rem/1.5 gm
+      color: $white
+      padding: 0 0 0 7rem
+      margin: 0 0 4rem
+      &:hover
+        cursor: pointer
+      &::before
+        font-family: 'im'
+        content: '\e947'
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        color: $text-dark
+        font-size: 3.5rem

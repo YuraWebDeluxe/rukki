@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    $('.js-hamburger').on('click', function() {
+
+  $('.js-hamburger').on('click', function() {
       $(this).toggleClass('is-active');
       $('.menu').toggleClass('menu--show');
       if($('.menu').hasClass('menu--show')){
@@ -10,17 +11,13 @@ $(document).ready(function() {
         $('.js-hamburger').removeClass('is-active');
       }
       
-    })
-    $('.choose-style__item').click(function() {
-    var roof = $(this).attr('data-roof');
-    console.log(roof);
-    $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
-  });
+  })
 
   $('.sertificats__list').owlCarousel({
     loop:true,
     autoplay: true,
     nav:true,
+    padding: 0,
     smartSpeed: 500,
     autoplaySpeed: 1000,
     lazyLoad:true,
@@ -85,6 +82,13 @@ $(document).ready(function() {
     }
   })
 
+  $('.rewiews__adress-item').click(function() {
+    var selectedElement = $(this).attr('data-toggle');
+
+    $('#' + selectedElement).siblings().css('display', 'none');
+    $('#' + selectedElement).fadeIn();
+    console.log(selectedElement);
+  });
 
 
   instance3.start();
@@ -107,21 +111,73 @@ $(document).ready(function() {
 
   AOS.init();
 
-  $('input[name="square-roof"]').ionRangeSlider({
-    min: 25,
-    max: 500,
-    step: 25,
-    grid: true
+});
+
+
+
+
+  // Scroll to top
+  $(window).scroll(function() {
+
+    if ($(this).scrollTop() > 100) {
+      $('#scroller').addClass('fixed-arrows__top--active');
+      $('.list-phones').removeClass('fixed-arrows__top--active')
+    } else {
+      $('#scroller').removeClass('fixed-arrows__top--active');
+    }
+  });
+  
+  $('#scroller').click(function() {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 1000);
+    return false;
   });
 
-  $('button.js-clc-next').on('click', function(e) {
-      e.preventDefault();
-      $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
-  })
-  var $menu_items = $('.menu__item');
-  
 
-});
+  // select roof
+  $('.choose-style__item').click(function() {
+    var roof = $(this).attr('data-roof');
+    console.log(roof);
+    $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
+  });
+
+  $('.rewiews__adress-list').slick({
+    slidesToShow: 5,
+    infinite: false,
+    vertical: true,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: false,
+    draggable: false,
+    prevArrow: $('.adress-nav__top'),
+    nextArrow: $('.adress-nav__bottom'),
+  });
+
+
+  $('.review-slider').slick({
+    slidesToShow: 1,
+    infinite: false,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.review-slider__nav'
+  });
+  $('.review-slider__nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    asNavFor: '.review-slider',
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    prevArrow: $('.review-slider-prev'),
+    nextArrow: $('.review-slider-next'),
+  });
+
+
+
 
 // Openlayer map init
 $(function() {
@@ -157,7 +213,6 @@ var map = L.map('map').setView(new L.LatLng(48.903730, 24.716918), 17);
 
   map.addLayer(marker);
   map.addLayer(marker2);
-
 
 })
 
