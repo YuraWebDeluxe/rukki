@@ -5,6 +5,24 @@ $(document).ready(function() {
     })
   });
 
+  // Scroll to top
+  $(window).scroll(function() {
+
+    if ($(this).scrollTop() > 100) {
+      $('#scroller').addClass('fixed-arrows__top--active');
+      $('.list-phones').removeClass('fixed-arrows__top--active')
+    } else {
+      $('#scroller').removeClass('fixed-arrows__top--active');
+    }
+  });
+  
+  $('#scroller').click(function() {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 1000);
+    return false;
+  });
+
   
 
   $('.rewiews__adress-list').slick({
@@ -15,10 +33,32 @@ $(document).ready(function() {
     dots: false,
     centerMode: false,
     focusOnSelect: false,
-    draggable: true,
+    draggable: false,
     prevArrow: $('.adress-nav__top'),
     nextArrow: $('.adress-nav__bottom'),
   });
+
+
+  $('.review-slider').slick({
+    slidesToShow: 1,
+    infinite: false,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.review-slider__nav'
+  });
+  $('.review-slider__nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    asNavFor: '.review-slider',
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    prevArrow: $('.review-slider-prev'),
+    nextArrow: $('.review-slider-next'),
+  });
+
 
 
 

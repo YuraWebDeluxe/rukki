@@ -1,10 +1,9 @@
 .rewiews
-  padding: 6rem 0 // delete
   display: flex // delete
   &__col
     background: url('../img/rewiew-bg.png') no-repeat center // delete
     background-size: cover // delete
-    padding: 7rem 7rem 6rem
+    padding: 7rem 7rem 6rem 10rem
     flex: 0 0 50%
     max-width: 50%
   &__title
@@ -13,11 +12,11 @@
   &__subtitle
     font: 2.4rem/1 gm
     color: $white
+    margin: 0 0 6rem
   & .active
     display: block
   &__text
     display: none
-    max-width: 56rem //delete this
     &:first-child
       display: block
     &-header
@@ -41,9 +40,10 @@
   &__adress
     position: relative
     flex: 0 0 50%
-    background: url('../img/rewiew-bg-left.png') no-repeat center // delete
-    background-size: cover // delte
-    padding: 10rem 10rem 20rem 15rem
+    align-self: flex-start
+    background: url('../img/rewiew-bg-left.png') no-repeat center
+    background-size: cover
+    padding: 10rem 10rem 15rem 15rem
     max-width: 50%
     &-title
       font: 4.5rem/1 gmeb
