@@ -46,3 +46,14 @@
     background: $white
     &:hover
       color: $red
+.next-step
+  // sass-lint:disable placeholder-in-extend
+  @extend .skew-btn
+  padding-left: 2rem
+  background: $red
+  width: 25rem
+  &::before
+    display: none
+  &::after
+    right: 1rem
+    color: $white

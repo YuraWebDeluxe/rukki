@@ -151,6 +151,7 @@ gulp.task('scripts', function() {
 		'./libs/jquery.nicescroll.min.js',
 		'./libs/owl/owl.carousel.min.js',
 		'./libs/basicScroll.min.js',
+		'./libs/ion/ion.rangeSlider.min.js',
 		'./libs/config.js',
 		'./libs/slick/slick.js',
 		])

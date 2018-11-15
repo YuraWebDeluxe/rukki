@@ -3,9 +3,45 @@
   .container
     @include make-container(135rem)
   &__view
+    display: none
+    &.active
+      display: block
     &--first
       .type-view
         background: $white
+    &--second
+      background: $hero-bg
+      padding: 5rem
+    &--third
+      padding: 5rem
+      background: $hero-bg
+      .section-form
+        margin-top: 30rem
+        position: relative
+        &::before
+          content: ''
+          width: 41.2rem
+          height: 36.6rem
+          background: url('../img/r-man.png')
+          display: block
+          position: absolute
+          top: -30.5rem
+          right: 0
+        &__form
+          justify-content: flex-start
+        .input-wrap
+          [type='text']
+            max-width: 80%
+          &--submit
+            right: -5rem
+            width: 35rem
+            &:hover
+              [type='submit']
+                padding-left: 4rem
+            [type='submit']
+              padding-left: 1rem
+              text-transform: none
+              font-family: 'gmm'
   &__title
     font: 3.3rem/1 'gmeb'
     max-width: 32rem
