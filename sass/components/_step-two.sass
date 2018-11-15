@@ -1,0 +1,61 @@
+.step-two
+  flex: 0 0 100%
+  display: flex
+  justify-content: space-between
+  &__color
+    flex: 0 0 32rem
+  &__type
+    flex: 0 0 25rem
+    &-list
+      @include list-default(0)
+      li
+        // sass-lint:disable nesting-depth
+        cursor: pointer
+        [type='radio']
+          display: none
+          &:checked + label
+            &::before
+              background: $red
+        &:not(:last-child)
+          margin: 0 0 5rem
+      label
+        margin-bottom: 0
+        font: 1.6rem/1 'gmb'
+        position: relative
+        padding: 6rem 0 0 5rem
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        &::after
+          content: ''
+          width: 12.2rem
+          height: 3.9rem
+          display: block
+          flex: 0 0 12.2rem
+          background: url('../img/tr-1.png')
+          position: absolute
+          top: 0
+        &::before
+          content: '\ea10'
+          font-family: 'im'
+          font-size: 1.6rem
+          text-align: center
+          width: 3.5rem
+          height: 3.5rem
+          line-height: 3.5rem
+          background: $logo-border
+          color: $white
+          display: block
+          border-radius: 50%
+          cursor: pointer
+          position: absolute
+          left: 0
+  &__size
+    flex: 0 0 37rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+    .next-step
+      width: 100%
+      text-align: center

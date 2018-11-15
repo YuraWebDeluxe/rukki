@@ -26,12 +26,39 @@
     height: 7rem
     border-radius: 50%
     margin: 0 0 2rem
+    display: flex
+    justify-content: center
+    align-items: center
+    label
+      margin: 0
+      opacity: 0
+      transition: opacity .3s
+      &::before
+        content: '\ea10'
+        font-family: 'im'
+        font-size: 1.6rem
+        text-align: center
+        width: 3.5rem
+        height: 3.5rem
+        line-height: 3.5rem
+        background: $white
+        color: transparent
+        display: block
+        border-radius: 50%
+        cursor: pointer
+    [type='radio']
+      display: none
+      &:checked + label
+        opacity: 1
     &:hover
       cursor: pointer
     @each $color-name, $color-code in $choose-style-colors
       $i: index(($choose-style-colors), ($color-name $color-code))
       &:nth-child(#{$i})
         background: $color-code
+        label
+          &::before
+            color: $color-code
   & .skew-btn
     width: 100%
     max-width: 49rem
