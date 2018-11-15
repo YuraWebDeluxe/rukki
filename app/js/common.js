@@ -1,10 +1,17 @@
 $(document).ready(function() {
-  $('.js-hamburger').each(function() {
-    $(this).on('click', function() {
-      $(this).toggleClass('is-active')
+    var tl = new TimelineLite(); 
+    $('.js-hamburger').on('click', function() {
+      $(this).toggleClass('is-active');
+      $('.menu').toggleClass('menu--show');
+      if($('.menu').hasClass('menu--show')){
+        $('.backdrop').addClass('backdrop--show');
+        $('.menu .js-hamburger').addClass('is-active');
+      }else{
+        $('.backdrop').removeClass('backdrop--show');
+        $('.js-hamburger').removeClass('is-active');
+      }
+      
     })
-  });
-
     $('.choose-style__item').click(function() {
     var roof = $(this).attr('data-roof');
     console.log(roof);
@@ -112,6 +119,8 @@ $(document).ready(function() {
       e.preventDefault();
       $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
   })
+  var $menu_items = $('.menu__item');
+  
 
 });
 
@@ -149,6 +158,7 @@ var map = L.map('map').setView(new L.LatLng(48.903730, 24.716918), 17);
 
   map.addLayer(marker);
   map.addLayer(marker2);
+
 
 })
 

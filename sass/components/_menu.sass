@@ -1,0 +1,95 @@
+.menu
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 999
+  background: url('../img/menu-bg.png') no-repeat 0 center, $menu-bg
+  padding: 9rem
+  width: 39%
+  max-width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+  height: 100%
+  transform: translate3d(100%, 0, 0) scaleX(.7)
+  transition: transform .5s cubic-bezier(.98, .05, 0, 1.03) .2s
+  .hamburger
+    position: absolute
+    top: 9rem
+    right: 9rem
+  &__logo
+    margin-bottom: 20rem
+    width: 17rem
+    text-align: right
+    overflow: hidden
+    img
+      max-width: 100%
+      transform: translate3d(0, -100%, 0)
+      transition: transform 1s cubic-bezier(1, -.33, 0, 1.3) .2s
+  &__list
+    @include list-default(0)
+    width: 17rem
+    text-align: right
+    overflow: hidden
+    padding-bottom: 1rem
+  &__item
+    transform: translate3d(100%, 0, 0)
+    transition: transform 1s cubic-bezier(1, -.33 , 0, 1.3), opacity .5s
+    opacity: 0
+    @for $i from 1 through 7
+      &:nth-child(#{$i})
+        transition-delay: $i * .05s
+    &:not(:last-child)
+      margin-bottom: 4rem
+    a
+      font: 1.8rem/1 'gml'
+      color: $white
+      text-decoration: none
+      position: relative
+      display: inline-block
+      overflow: hidden
+      padding: 1rem .5rem
+      z-index: 4
+      text-align: center
+      transition: color .3s
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        display: block
+        height: .3rem
+        width: 100%
+        background: $white
+        transform: scale(0)
+        transition: transform .3s cubic-bezier(1, -.33, 0, 1.3)
+        z-index: -1
+      &:hover
+        &::before
+          transform: scale(1)
+  &--show
+    transform: translate3d(0, 0, 0) scaleX(1)
+    .menu__item
+      transform: translate3d(0, 0, 0)
+      opacity: 1
+    .menu__logo
+      img
+        transform: translate3d(0, 0, 0)
+
+
+.backdrop
+  position: fixed
+  z-index: 999
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  background: $white-transparent
+  opacity: 0
+  transform: scaleX(.5) translate3d(-100%, 0, 0)
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out
+  &--show
+    opacity: 1
+    transform: scaleX(1) translate3d(0, 0, 0)
