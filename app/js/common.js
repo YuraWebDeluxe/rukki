@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $('.js-hamburger').on('click', function() {
       $(this).toggleClass('is-active');
       $('.menu').toggleClass('menu--show');
