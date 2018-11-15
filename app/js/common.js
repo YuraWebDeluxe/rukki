@@ -1,5 +1,65 @@
 $(document).ready(function() {
 
+    // Scroll to top
+  $(window).scroll(function() {
+
+    if ($(this).scrollTop() > 100) {
+      $('#scroller').addClass('fixed-arrows__top--active');
+      $('.list-phones').removeClass('fixed-arrows__top--active')
+    } else {
+      $('#scroller').removeClass('fixed-arrows__top--active');
+    }
+  });
+  
+  $('#scroller').click(function() {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 1000);
+    return false;
+  });
+
+
+  // select roof
+  $('.choose-style__item').click(function() {
+    var roof = $(this).attr('data-roof');
+    console.log(roof);
+    $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
+  });
+
+  $('.rewiews__adress-list').slick({
+    slidesToShow: 5,
+    infinite: false,
+    vertical: true,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: false,
+    draggable: false,
+    prevArrow: $('.adress-nav__top'),
+    nextArrow: $('.adress-nav__bottom'),
+  });
+
+
+  $('.review-slider').slick({
+    slidesToShow: 1,
+    infinite: false,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.review-slider__nav'
+  });
+  $('.review-slider__nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    asNavFor: '.review-slider',
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    prevArrow: $('.review-slider-prev'),
+    nextArrow: $('.review-slider-next'),
+  });
+
   $('.js-hamburger').on('click', function() {
       $(this).toggleClass('is-active');
       $('.menu').toggleClass('menu--show');
@@ -85,9 +145,8 @@ $(document).ready(function() {
   $('.rewiews__adress-item').click(function() {
     var selectedElement = $(this).attr('data-toggle');
 
-    $('#' + selectedElement).siblings().css('display', 'none');
-    $('#' + selectedElement).fadeIn();
-    console.log(selectedElement);
+    $('#' + selectedElement).siblings().removeClass('active');
+    $('#' + selectedElement).addClass('active');
   });
 
 
@@ -116,65 +175,7 @@ $(document).ready(function() {
 
 
 
-  // Scroll to top
-  $(window).scroll(function() {
 
-    if ($(this).scrollTop() > 100) {
-      $('#scroller').addClass('fixed-arrows__top--active');
-      $('.list-phones').removeClass('fixed-arrows__top--active')
-    } else {
-      $('#scroller').removeClass('fixed-arrows__top--active');
-    }
-  });
-  
-  $('#scroller').click(function() {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 1000);
-    return false;
-  });
-
-
-  // select roof
-  $('.choose-style__item').click(function() {
-    var roof = $(this).attr('data-roof');
-    console.log(roof);
-    $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
-  });
-
-  $('.rewiews__adress-list').slick({
-    slidesToShow: 5,
-    infinite: false,
-    vertical: true,
-    slidesToScroll: 1,
-    dots: false,
-    centerMode: false,
-    focusOnSelect: false,
-    draggable: false,
-    prevArrow: $('.adress-nav__top'),
-    nextArrow: $('.adress-nav__bottom'),
-  });
-
-
-  $('.review-slider').slick({
-    slidesToShow: 1,
-    infinite: false,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.review-slider__nav'
-  });
-  $('.review-slider__nav').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    infinite: false,
-    asNavFor: '.review-slider',
-    dots: false,
-    centerMode: false,
-    focusOnSelect: true,
-    prevArrow: $('.review-slider-prev'),
-    nextArrow: $('.review-slider-next'),
-  });
 
 
 

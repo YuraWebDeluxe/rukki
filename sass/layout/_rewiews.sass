@@ -1,11 +1,20 @@
 .rewiews
   display: flex // delete
-  &__col
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    width: 80%
+    bottom: 0
     background: url('../img/rewiew-bg.png') no-repeat center // delete
     background-size: cover // delete
-    padding: 7rem 7rem 6rem 10rem
-    flex: 0 0 50%
-    max-width: 50%
+  &__col
+    padding: 7rem 7rem 6rem 15rem
+    flex: 0 0 60%
+    max-width: 60%
+    position: relative
+    z-index: 100
   &__title
     font: 4.5rem/1 gmeb
     color: $red
@@ -13,17 +22,22 @@
     font: 2.4rem/1 gm
     color: $white
     margin: 0 0 6rem
-  & .active
-    display: block
+   
   &__text
-    display: none
-    &:first-child
+    height: 0
+    display: flex !important
+    flex-direction: column
+    overflow: hidden
+    &.active
       display: block
+      height: auto 
+    
     &-header
       display: flex
       justify-content: space-between
       align-items: center
       margin: 0 0 4rem
+      max-width: 65rem
     &-title
       font: 2.4rem/1 gmh
       color: $white
@@ -37,13 +51,16 @@
     font: 1.6rem/1.5 gml
     color: $white
     text-align: justify
+    margin: 0
+    max-width: 65rem
   &__adress
-    position: relative
+    position: absolute
+    right: 0
     flex: 0 0 50%
     align-self: flex-start
     background: url('../img/rewiew-bg-left.png') no-repeat center
     background-size: cover
-    padding: 10rem 10rem 15rem 15rem
+    padding: 10rem 15rem 15rem 25rem
     max-width: 50%
     &-title
       font: 4.5rem/1 gmeb
