@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    var tl = new TimelineLite(); 
     $('.js-hamburger').on('click', function() {
       $(this).toggleClass('is-active');
       $('.menu').toggleClass('menu--show');
