@@ -5,6 +5,14 @@
     background: url('../img/dah-form.png')
     top: -9rem
     right: -21rem
+    +mq(1350px)
+      top: -5rem
+      right: -16rem
+    +mq(xl)
+      top: -10rem
+      right: -5rem
+    +mq(lg)
+      display: none
   max-width: 95rem
   background: url('../img/section-from-bg.png'), $red-rgba
   background-size: cover
@@ -12,19 +20,52 @@
   color: $white
   padding: 9rem 12rem 8rem 10rem
   position: relative
-  box-shadow: 0 37px 72px -20px $dark-shadow
+  box-shadow: 0 37px 72px -20px $dark-shadow    
+  +mq(1350px)
+    max-width: 85rem
+  +mq(xl)
+    padding: 10rem 5rem
+  +mq(md)
+    padding: 5rem 2.5rem
+  +mq(lg)
+    max-width: 95%
+    margin: 0 auto
+  +mq(450px)
+    max-width: 100%
+    padding: 5rem 1rem
   &__title
     font: 6rem/1 'gmb'
     margin: 0 0 1rem
+    +mq(lg)
+      text-align: center
+      font-size: 5rem
+    +mq(md)
+      font-size: 3.8rem
+    +mq(450px)
+      font-size: 3rem
+      margin: 0
   &__subtitle
     text-align: right
     font: 3.6rem/1 'gmb'
     margin: 0 0 3rem
+    +mq(lg)
+      text-align: center
+      font-size: 3.2rem
+    +mq(450px)
+      font-size: 3rem
   &__text
-    font: 1.6rem/1 'gml'
+    font: 1.6rem/1.5 'gml'
     text-align: center
     margin: 0 0 5rem
+    +mq(450px)
+      margin: 0 0 3.5rem
   .input-wrap
+    +mq(xl)
+      flex: 0 0 100%
+      max-width: 32rem
+    +mq(lg)
+      &:not(:last-child)
+        margin-bottom: 2.5rem
     [type='text']
       width: 100%
       background: 0
@@ -36,6 +77,7 @@
       padding-left: 3rem
       z-index: 2
       position: absolute
+      border-radius: 0
       &::placeholder
         color: transparent
       &:focus + label
@@ -49,6 +91,11 @@
       max-width: 100%
       width: 64rem
       position: relative
+      +mq(1350px)
+        width: 50rem
+      +mq(xl)
+        flex: 0 0 100%
+        max-width: 32rem
       [name='your-phone']
         background: url('../img/your-phone.png') no-repeat 0 center
       [name='your-name']
@@ -70,6 +117,11 @@
       right: -16rem
       background: $red
       overflow: hidden
+      +mq(xl)
+        position: relative
+        right: auto
+        bottom: auto
+        flex: 0 0 32rem
       &::after
         font-family: 'im'
         content: '\ea3c'
@@ -105,10 +157,14 @@
         font-family: 'gm', monospace
         letter-spacing: .1rem
         text-transform: uppercase
+        +mq(450px)
+          padding-left:  2rem
     &:hover
       [type='submit']
         cursor: pointer
         padding-left: 6rem
+        +mq(450px)
+          padding-left: 2rem
       &::before
         left: 100%
         width: 25%
@@ -128,10 +184,16 @@
       margin: 0 0 3rem
   &__form
     display: flex
+    +mq(lg)
+      justify-content: center
     form
       display: flex
       width: 100%
       justify-content: space-between
+      +mq(xl)
+        flex-wrap: wrap
+      +mq(lg)
+        max-width: 32rem
     &--double
       .input-wrap
         &--text
