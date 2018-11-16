@@ -1,25 +1,48 @@
 .order-process
   padding: 10rem 0 15rem
   position: relative
-  display: none
+  overflow: hidden
+  +mq(md)
+    padding: 10rem 0 5rem
   .container
     @include make-container(142rem)
+    +mq(450px)
+        max-width: 95%
   $this: &
   &__title
     font: 4.8rem/1 'gmh'
     width: 70rem
     max-width: 100%
     margin: 0 0 0 auto
+    +mq(xl)
+      text-align: center
+      width: 100%
+      font-size: 4.2rem
+    +mq(md)
+      font-size: 3.8rem
+    +mq(sm)
+      font-size: 3.4rem
+    +mq(450px)
+      font-size: 2.8rem
     span
       color: $red
       display: block
       text-align: right
+      +mq(xl)
+        text-align: center
   &__list
     @include list-default(0)
     display: flex
     flex-direction: column
     counter-reset: owldots
     margin-top: -10rem
+    +mq(xl)
+      margin-top: 5rem
+      padding: 0 1rem
+    +mq(md)
+      align-items: center
+    +mq(450px)
+      padding: 0
   &__item
     @include pseudo(a)
       height: 7rem
@@ -27,11 +50,23 @@
       top: 0
       left: 5rem
       z-index: 2
+      +mq(450px)
+        height: 5rem
+        width: 5rem
+        left: 3.5rem
     max-width: 42rem
     position: relative
     padding-left: 14rem
     height: 7rem
     background-position: center
+    +mq(xl)
+      height: 10rem
+    +mq(md)
+      width: 42rem
+    +mq(450px)
+      width: 100%
+      height: auto
+      padding-left: 10rem
     &::before
       counter-increment: owldots
       content: counter(owldots)
@@ -50,6 +85,11 @@
       @supports (-webkit-background-clip: text)
         -webkit-background-clip: text
         color: transparent
+      +mq(450px)
+        width: 5rem
+        height: 5rem
+        line-height: 5rem
+        font-size: 5rem
     h3
       font: 1.8rem/1 'gmh'
       color: $red
@@ -59,8 +99,14 @@
       font: 1.6rem/1.2 'gm'
     &:not(:last-child)
       margin-bottom: 2rem
+      +mq(xl)
+        margin-bottom: 3rem
     @for $i from 1 through 6
       &:nth-child(#{$i})
         margin-left:  (14% * $i) - 14%
+        +mq(xl)
+          margin-left:  (12% * $i) - 12%
+        +mq(md)
+          margin-left: 0
         &::after
           background:  url('../img/order-process/op-#{$i}.png') no-repeat center, $red

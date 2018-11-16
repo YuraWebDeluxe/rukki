@@ -1,28 +1,55 @@
 .sertificats
   overflow: hidden
-  display: none
   &__wrap
     display: flex
     flex-wrap: wrap
   &__col
     flex: 0 0 50%
     max-width: 50%
+    +mq(lg)
+      flex: 0 0 100%
+      max-width: 100%
     &--left
       background: url('../img/sert-show-bg.png') no-repeat 0 center, $text-dark
       padding: 5rem 10rem
       display: flex
       flex-direction: column
       justify-content: center
+      +mq(xl)
+        padding: 5rem 5rem
+      +mq(md)
+        padding: 5rem 2.5rem
     &--right
-      padding: 5rem 10rem
+      padding: 5rem 10rem 10rem
       background: url('../img/sert-r-bg.png') no-repeat 95% center, $hero-bg
+      +mq(xl)
+        padding: 5rem 10rem 10rem
+      +mq(lg)
+        padding: 5rem 10rem 15rem
+      +mq(sm)
+        padding: 5rem 2.5rem 15rem
   &__title
     color: $red
     font: 4.8rem/1 'gmeb'
     margin-bottom: 2rem
+    +mq(xl)
+      font-size: 4rem
+    +mq(lg)
+      text-align: center
+    +mq(sm)
+      font-size: 3.6rem
   &__text
     color: $white
     font: 3rem/1 'gm'
+    margin: 0
+    +mq(xl)
+      font-size: 2.6rem
+    +mq(lg)
+      text-align: center
+    +mq(sm)
+      font-size: 2.2rem
+    +mq(414px)
+      font-size: 1.8rem
   &__list
     // sass-lint:disable no-important
     display: flex !important
@@ -35,6 +62,7 @@
       align-items: center
       img
         margin: 0 auto
+        max-width: 100%
     .owl-stage
       display: flex
       justify-content: center
@@ -45,19 +73,30 @@
 
   .owl-nav
     position: absolute
-    bottom: -5rem
+    bottom: -10rem
     left: -17rem
+    +mq(lg)
+      left: 50%
+      transform: translateX(-50%)
+      bottom: -15rem
+      z-index: 15
     [class^='icon-']
       font-size: 3rem
   .owl-dots
     position: absolute
-    bottom: -5rem
+    bottom: -10rem
     left: 0
     counter-reset: owldots
+    +mq(lg)
+      left: 50%
+      transform: translateX(-50%)
+      bottom: -7.5rem
     .owl-dot
       background: transparent
       font: 1.4rem/1 'gmeb'
       color: $logo-border
+      +mq(lg)
+        width: 4rem
       &::before
         counter-increment: owldots
         content: counter(owldots)

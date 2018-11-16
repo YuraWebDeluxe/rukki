@@ -77,7 +77,7 @@ $(document).ready(function() {
     loop:true,
     autoplay: true,
     nav:true,
-    padding: 0,
+    padding: '50px',
     smartSpeed: 500,
     autoplaySpeed: 1000,
     lazyLoad:true,

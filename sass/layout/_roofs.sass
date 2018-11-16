@@ -2,6 +2,7 @@
   padding: 5rem 0 10rem
   background: url('../img/roofs-bg-l.png') no-repeat, url('../img/roofs-bg-r.png') no-repeat
   background-position: 0 0, 100% 0
+  overflow: hidden
   +mq(md)
     background-position: -50% 10%, 150% -10%
   .container
@@ -15,7 +16,7 @@
     text-align: center
     padding-top: 22rem
     +mq(500px)
-      width: 31rem
+      width: 29rem
       height: 31rem
       background-size: 100%
     p
@@ -62,7 +63,6 @@
       align-items: center      
   &__card
     max-width: 36.6rem
-    flex: 0 0 36.6rem
     background: linear-gradient(-45deg, $white 20%, $hero-bg 0%)
     padding: 9rem 5rem 6rem
     position: relative
