@@ -2,27 +2,64 @@
   padding: 15rem 0
   background: url('../img/t-contur.png'), url('../img/t-contur.png')
   background-repeat: no-repeat
-  background-position: 95% 5%, 5% 95%
-  display: none
+  background-position: 95% 5%, 5% 95%  
+  +mq(md)
+    background: none
+    padding: 5rem 0
   .container
     @include make-container(138rem)
+    +mq(450px)
+        max-width: 95%
   &__decor
     width: 45rem
+    height: 45rem
     max-width: 100%
+    +mq(1100px)
+      width: 35rem
+      height: 35rem
+    +mq(lg)
+      margin-bottom: 5rem
+    +mq(450px)
+      width: 27rem
+      height: 27rem
     &-img
       position: absolute
       right: -37%
-      top: -9%
+      top: 7%
       transform: translate(0, 0)
       transition: transform .1s ease-in-out
+      +mq(1440px)
+        width: 60rem
+        right: -24%
+        top: 14%
+      +mq(1100px)
+        width: 50rem
+      +mq(md)
+        width: 40rem
+        right: -10%
+        top: 20%
+      +mq(450px)
+        width: 30rem
+        right: -2%
+        top: 20%
   &__content
     max-width: 35rem
     height: 100%
     margin: 0 auto
+    +mq(450px)
+      width: 26rem
   &__title
     font: 4.8rem/1 'gmh'
     margin: 0
+    +mq(xl)
+      font-size: 4.2rem
+    +mq(md)
+      font-size: 3.8rem
+    +mq(sm)
+      font-size: 3.4rem
   &__text
     font: 1.8rem/1.5 'gml'
   .dotted-divider
     margin: 6rem 0
+    +mq(sm)
+      margin: 3rem 0
