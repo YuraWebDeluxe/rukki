@@ -1,8 +1,10 @@
 .why-ruukki
   padding: 10rem 0
-  display: none
+
   .container
     @include make-container(143rem)
+    +mq(1430px)
+      max-width: 95%
   &__title
     @include pseudo(b)
       right: 0
@@ -10,25 +12,45 @@
       height: 10.7rem
       background: url('../img/t-contur.png') no-repeat center
       background-size: 100%
+      +mq(md)
+        background-size: 45%
+        background-position:  top right
     margin: 0
     font: 6rem/1 'gmeb'
     color: $text-dark
     position: relative
+    +mq(md)
+      font-size: 4rem
+    +mq(450px)
+      font-size: 3rem
     & > span
       color: $red
       display: block
       font-size: 4rem
+      +mq(450px)
+        font-size: 3rem
       span
         color: $text-dark
   &__wrap
     display: flex
     margin-top: 10rem
+    +mq(md)
+      flex-wrap: wrap
+      margin-top: 5rem
   &__col
     padding: 8rem 8rem 35rem
+    +mq(xl)
+      padding: 8rem 5rem 35rem
+    +mq(lg)
+      padding: 8rem 5rem 30rem
+    +mq(md)
+      padding: 5rem 2.5rem 5rem
     h3
       font: 3.6rem/1 'gmeb'
       color: $text-dark
       margin-bottom: 8rem
+      +mq(md)
+        margin-bottom: 3rem
       span
         color: $red
     ul
@@ -52,6 +74,11 @@
       border: 2.5rem solid $hero-bg
       border-left: 0
       padding: 5.5rem 5.5rem 7.5rem 8rem
+      +mq(lg)
+        padding: 5.5rem 1rem 7.5rem 5rem
+      +mq(md)
+        border-left: 2.5rem solid $hero-bg
+        padding: 2.5rem 1rem 2.5rem 1rem
       h3
         text-align: right
       h4
@@ -64,8 +91,14 @@
           background-position: 0 -120px
           top: 2rem
           left: -10rem
+          +mq(lg)
+            left: -7rem
+          +mq(md)
+            display: none
   .section-form
     margin-top: -20rem
+    +mq(md)
+      margin-top: 5rem
 .w-divider
   background-image: url('../img/spriteall.png')
   background-position: -139px -160px
