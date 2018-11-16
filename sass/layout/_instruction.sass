@@ -1,42 +1,88 @@
 .instruction
   display: flex
-  display: none
+  +mq(md)
+    flex-direction: column
+    align-items: stretch;
   &__hand
     position: relative
-    flex: 50%
+    flex: 0 0 50%
     background: url('../img/instruction-left-bg.png') no-repeat right center
     background-size: cover
+    +mq(lg)
+      flex: 0 0 40%
+    +mq(md)
+      height: 50rem
+      order: 1
   &__img
     max-width: 100%
     position: absolute
     bottom: 0
     left: 60%
     transform: translateX(-50%)
+    +mq(lg)
+      left: 30%
+    +mq(md)
+      left: 0
+      max-width: 80%
+      transform: translateX(0)
+    +mq(sm)
+      max-width: 100%
+      transform: translateX(-20%)
   &__text
     flex: 0 0 50%
     background: url('../img/instruction-right-bg.png') no-repeat left center
     background-size: cover
     padding: 20rem 8rem 20rem 26rem
     align-self: flex-start
+    +mq(1700px)
+      padding: 15rem 8rem 15rem 19rem
+    +mq(1500px)
+      padding: 15rem 4rem 15rem 13rem
+    +mq(lg)
+      padding: 10rem 4rem 10rem 11rem
+      flex: 0 0 60%
+    +mq(md)
+      padding: 10rem 4rem
+      width: 100%
   &__title
     font: 4.8rem/1 gmh
     color: $white
     margin: 0 0 15rem
+    max-width: 62rem
+    +mq(xl)
+      font-size: 4rem
+      margin: 0 0 10rem
+    +mq(lg)
+      margin: 0 0 5rem
     & span
       display: block
       text-align: right
   &__subtitle
     font: 2.9rem/1.5 gml
     color: $white
+    max-width: 62rem
+    +mq(xl)
+      font-size: 2.4rem
+    +mq(lg)
+      font-size: 1.8rem
   &__download
     position: absolute
-    bottom: 24rem
+    bottom: 22rem
     right: -4rem
     width: 8rem
     height: 8rem
     border-radius: 50%
     background-color: $white
     z-index: 1000
+    +mq(xl)
+      bottom: 16rem
+    +mq(lg)
+      bottom: 14rem
+    +mq(md)
+      right: 6rem
+      bottom: 6rem
+      width: 6rem
+      height: 6rem
     &::after
       content: ''
       position: absolute
@@ -49,10 +95,10 @@
     &::before
       content: ''
       position: absolute
-      top: -2.3rem
-      left: -2.3rem
-      width: 12.6rem
-      height: 12.6rem
+      top: -25%
+      left: -25%
+      width: 150%
+      height: 150%
       border-radius: 50%
       background: $btn-download-animation-bg
     &:hover
@@ -63,14 +109,14 @@
     &--icon
       position: relative
       display: inline-block
-      width: 8rem
-      height: 8rem
+      width: 100%
+      height: 100%
       &::before
         content: ''
         z-index: 1
         position: absolute
-        width: 8rem
-        height: 8rem
+        width: 100%
+        height: 100%
         background: url('../img/instruction-download.png') no-repeat center
       &::after
         content: ''
@@ -81,3 +127,5 @@
         height: .6rem
         width: 5rem
         border-bottom: .8rem dotted $red
+        +mq(md)
+          display: none
