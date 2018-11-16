@@ -16,17 +16,6 @@ $(document).ready(function(){
         placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7..."
     });
 
-	// Site scrollbar
-    if (window.matchMedia('(min-width: 1200px)').matches) {
-        $("body").niceScroll({
-            cursorcolor: "#c12238",
-            cursorwidth: "10px",
-            cursorborder: "none",
-            cursorborderradius: 0,
-            autohidemode: false
-        });
-    };
-
     // CF7 js callback
     $(".wpcf7").on('wpcf7:mailsent', function(event){
 	    $('#mdlSuccess').modal('show');

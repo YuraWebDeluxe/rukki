@@ -2,6 +2,7 @@
   padding: 1rem 0
   position: relative
   z-index: 13
+  display: none
   &__container
     @include make-container(143rem)
     display: flex
@@ -16,7 +17,6 @@
       font: 1.4rem/1.1 'gm'
       border-left: 1px solid $logo-border
       color: $logo-text
-
   &__phones
     @include list-default
     display: flex
@@ -38,15 +38,12 @@
         position: absolute
         left: 0
         top: -.3rem
+        background-image: url('../img/spriteall.png')
       &.h-phone
         &::before
-          background: url('../img/i-phone.png')
+          background-position: -163px -120px
       &.h-telegram
         &::before
-          background: url('../img/i-phone.png')
-
+          background-position: -163px -62px
   .hamburger
     align-self: center
-
-
-    

@@ -2,6 +2,8 @@
   padding: 5rem 0 10rem
   background: url('../img/roofs-bg-l.png') no-repeat, url('../img/roofs-bg-r.png') no-repeat
   background-position: 0 0, 100% 0
+  +mq(md)
+    background-position: -50% 10%, 150% -10%
   .container
     @include make-container($container-desktop)
   &__title
@@ -12,33 +14,62 @@
     position: relative
     text-align: center
     padding-top: 22rem
+    +mq(500px)
+      width: 31rem
+      height: 31rem
+      background-size: 100%
     p
       font: 1.8rem/1.5 'gm'
       color: $red
       text-align: center
       margin: 0 auto
+      +mq(500px)
+        margin-top: -5rem
   &__title-group
     position: absolute
     width: 77rem
     top: 9rem
     left: 50%
     transform: translate(-50%)
+    +mq(md)
+      width: 54rem
+    +mq(sm)
+      width: 100%
+      top: 9rem
+    +mq(500px)
+      top: 0
     h2
       font: 6rem/1 'gmeb'
+      +mq(lg)
+        font-size: 5rem
+      +mq(sm)
+        font-size: 4.5rem
       span
         color: $red
     h3
       font: 3rem/1 'gmeb'
+      +mq(lg)
+        font-size: 2.4rem
+      +mq(sm)
+        font-size: 2.2rem
   &__list
     @include list-default(0)
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
+    +mq(lg)
+      flex-direction: column
+      align-items: center      
   &__card
     max-width: 36.6rem
+    flex: 0 0 36.6rem
     background: linear-gradient(-45deg, $white 20%, $hero-bg 0%)
     padding: 9rem 5rem 6rem
     position: relative
     margin-top: 12rem
+    +mq(1100px)
+      padding: 9rem 3rem 6rem
+      max-width: 31.6rem
     &-quality
       position: absolute
       top: -7.5rem

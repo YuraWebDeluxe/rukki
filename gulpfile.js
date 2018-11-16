@@ -87,8 +87,8 @@ gulp.task('sass-lint', function() {
 
 gulp.task('sprite', function () {
   // Generate our spritesheet
-  var spriteData = gulp.src('app/img/discount-composition/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
+  var spriteData = gulp.src('app/img/spritesrc/*.png').pipe(spritesmith({
+    imgName: 'spriteall.png',
     cssName: 'sprite.css'
   }));
 
@@ -97,7 +97,7 @@ gulp.task('sprite', function () {
     // DEV: We must buffer our stream into a Buffer for `imagemin`
     .pipe(buffer())
     .pipe(imagemin())
-    .pipe(gulp.dest('app/img/discount-composition'));
+    .pipe(gulp.dest('app/img/'));
 
   // Pipe CSS stream through CSS optimizer and onto disk
   var cssStream = spriteData.css
@@ -148,7 +148,6 @@ gulp.task('scripts', function() {
 		'./libs/Inputmask-4.x/dist/jquery.inputmask.bundle.js',
 		'./libs/lazyimg/lazyimg.min.js',
 		'./libs/fancybox/jquery.fancybox.js',
-		'./libs/jquery.nicescroll.min.js',
 		'./libs/owl/owl.carousel.min.js',
 		'./libs/basicScroll.min.js',
 		'./libs/ion/ion.rangeSlider.min.js',

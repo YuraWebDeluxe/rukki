@@ -1,5 +1,6 @@
 .why-ruukki
   padding: 10rem 0
+  display: none
   .container
     @include make-container(143rem)
   &__title
@@ -59,13 +60,15 @@
         @include pseudo(a)
           width: 4rem
           height: 4rem
-          background: url('../img/wr-divider.png')
+          background-image: url('../img/spriteall.png')
+          background-position: 0 -120px
           top: 2rem
           left: -10rem
   .section-form
     margin-top: -20rem
 .w-divider
-  background: url('../img/wr-l-divider.png')
+  background-image: url('../img/spriteall.png')
+  background-position: -139px -160px
   width: 4.2rem
   height: 1.1rem
   display: inline-block

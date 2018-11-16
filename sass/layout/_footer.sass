@@ -1,24 +1,50 @@
 .footer
   background-color: $footer-bg
   padding: 4.5rem 0
+  +mq(143rem)
+    padding: 4.5rem 2rem
+  +mq(md)
+    padding: 3.5rem 2rem
+  +mq(lg)
+    padding: 2.5rem 2rem
   &__container
     @include make-container(143rem)
     display: flex
     justify-content: space-between
     margin: 0 auto
+    +mq(md)
+      flex-direction: column
+      align-items: center
   &__logo
     display: flex
     align-items: center
     color: $white
+    +mq(md)
+      margin-bottom: 2rem
     & img
       margin: 0 3rem 0 0
+      +mq(md)
+        margin: 0 1.5rem 0 0
+        max-width: 10rem
     & p
-      font: 1.4rem/1.5 gm
+      font: 1.4rem/1.3 gm
       margin: 0
+      +mq(md)
+        font-size: 1.2rem
+      +mq(sm)
+        font-size: 1.1rem
   &__company
     display: flex
     align-items: center
+    img
+      +mq(md)
+        max-width: 15rem
     & p
       font: 1.4rem/1 gm
       color: $text-gray
       margin: 0 2rem 0 0
+      +mq(md)
+        font-size: 1.2rem
+        margin: 0 1.5rem 0 0
+      +mq(sm)
+        font-size: 1.1rem

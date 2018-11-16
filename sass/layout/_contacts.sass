@@ -5,6 +5,8 @@
   display: flex
   justify-content: center
   padding: 0 1.5rem
+  +mq(lg)
+    flex-direction: column
   &__item
     display: flex
     font: 1.6rem/1.5 gm
@@ -12,18 +14,56 @@
     padding: 0 7rem
     &:not(:last-child)
       border-right: .6rem $logo-border dotted
+      +mq(lg)
+        border: none
+        border-bottom: .6rem $logo-border dotted
+    +mq(1540px)
+      padding: 0 2.5rem
+      font-size: 1.5rem
+    +mq(xl)
+      font: 1.4rem/1.5 gm
+      padding: 0 1.5rem
+    +mq(lg)
+      justify-content: space-between
+      font: 1.4rem/1.5 gm
+      width: 37rem
+      padding: 2rem 0
+      margin: 0 auto
+    +mq(500px)
+      width: 100%
+  &__text
+    p
+      +mq(lg)
+        margin-bottom: 0
+      +mq(500px)
+        font-size: 1.3rem
   &__title
     position: relative
     font: 2.4rem/1 gmh
     color: $red
     margin: 0 2rem 0 0
     padding-left: 6rem
+    +mq(1440px)
+      padding-left: 5rem
+      font-size: 2.2rem
+    +mq(xl)
+      font-size: 2rem
+      margin: 0 1rem 0 0
+      padding-left: 4rem
+    +mq(lg)
+      margin: 0 0 1rem
+    +mq(500px)
+      padding-left: 3rem
+      flex: 0 0 50%
     &::before
       content: ''
       width: 3rem
       height: 4rem
       position: absolute
       left: 0
+      +mq(500px)
+        width: 2rem
+        height: 3rem
     &--mail
       &::before
         background: url('../img/contacts-icons/mail.png') no-repeat center / 100%
