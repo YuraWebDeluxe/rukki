@@ -1,14 +1,26 @@
 .lider
   padding: 15rem 0
-  display: none
+  +mq(lg)
+    padding: 10rem 0
+  +mq(sm)
+    padding: 10rem 0 5rem
   .container
     @include make-container(138rem)
+    +mq(138rem)
+      max-width: 95%
   &__title
     text-align: right
     font: 4.5rem/1 'gmm'
     color: $text-dark
     margin-bottom: 8rem
     max-width: 54rem
+    +mq(xl)
+      font-size: 4rem
+    +mq(lg)
+      max-width: 43rem
+      margin: 0 auto 5rem
+    +mq(450px)
+      font-size: 2.8rem
     span
       color: $red
       font-family: 'gmh'
@@ -17,6 +29,9 @@
     max-width: 54rem
     font: 1.8rem/1 'gmb'
     color: $red
+    +mq(lg)
+      margin: 0 auto 5rem
+      max-width: 43rem
     li
       @include pseudo(b)
         border-bottom: .6rem dotted $logo-border
@@ -39,6 +54,10 @@
         margin-bottom: 4rem
   &__catalog
     max-width: 43rem
+    +mq(lg)
+      height: 60rem
+    +mq(md)
+      height: 45rem
     &-img
       position: absolute
       max-width: 70rem
@@ -46,6 +65,23 @@
       top: 19%
       transform: translate(0, 0)
       transition: transform .1s ease-in-out
+      +mq(1440px)
+        width: 60rem
+        right: -24%
+        top: 14%
+      +mq(xl)
+        width: 50rem
+        right: -15%
+        top: 20%
+      +mq(md)
+        width: 40rem
+        right: 0%
+        top: 15%
+      +mq(450px)
+        width: 30rem
+        right: 50%
+        transform: translateX(50%)
+        top: 20%
     .skew-btn
       bottom: 8rem
       right: -10rem
@@ -54,6 +90,12 @@
       text-align: center
       padding-right: 4rem
       max-width: 36.6rem
+      +mq(1250px)
+        right: 50%
+        transform: translateX(50%)
+      +mq(450px)
+        width: 30rem
+
       &::after
         color: $text-dark
         right: 2rem
