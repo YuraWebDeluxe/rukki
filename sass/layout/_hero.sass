@@ -1,9 +1,15 @@
 .hero
   padding: 3rem 0 0
   height: 100vh
+  min-height: 80rem
   position: relative
   overflow: hidden
-  display: none
+  +mq(1350px)
+    padding: 0
+  +mq(xl)
+    min-height: 65rem
+  +mq(md)
+    max-height: 100vh
   &::before
     content: ''
     position: absolute
@@ -24,15 +30,23 @@
     background-repeat:  no-repeat
     background-size:  100% 75%, 65% 50%
     background-position:  0 0, 100% 100%
-
   .container
     max-width: 143rem
     padding: 0 1rem
+    +mq(1400px)
+      padding: 0 2rem
   &__content
     position: absolute
     max-width: 52.5rem
     top: 50%
     transform: translateY(-50%)
+    +mq(lg)
+      max-width: 35rem
+    +mq(md)
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+      z-index: 100
+      max-width: 40rem
   &__title
     @include pseudo(a)
       height: 2rem
@@ -41,12 +55,29 @@
       top: .8rem
       right: -45rem
       z-index: -1
+      +mq(1350px)
+        right: -42.5rem
+      +mq(md)
+        right: -32rem
+        top: .5rem
+        width: 30rem
     font: 3.5rem/1 'gmh'
     color: $text-dark
     max-width: 35rem
     text-align: right
     margin-bottom: 10rem
     text-transform: uppercase
+    +mq(xl)
+      margin-bottom: 5rem
+      font-size: 3rem
+    +mq(lg)
+      margin-bottom: 2.5rem
+    +mq(md)
+      margin-bottom: 5rem
+    +mq(sm)
+      font-size: 2.8rem
+    +mq(374px)
+      padding: 0 1rem
     span
       font-family: 'gmeb'
       font-size: 6rem
@@ -58,6 +89,20 @@
     font-size: 4.3rem
     line-height: 1
     margin-bottom: 10rem
+    +mq(1400px)
+      font-size: 3.5rem
+    +mq(xl)
+      margin-bottom: 5rem
+      font-size: 3.5rem
+    +mq(lg)
+      font-size: 2.8rem
+      margin-bottom: 2.5rem
+    +mq(md)
+      margin-bottom: 5rem
+    +mq(sm)
+      font-size: 2.6rem
+    +mq(374px)
+      font-size: 2.2rem
   &__composition
     width: 94rem
     height: 64.9rem
@@ -66,14 +111,43 @@
     z-index: 12
     top: 50%
     transform: translateY(-50%)
+    +mq(1500px)
+      width: 86rem
+      height: 56.9rem
+    +mq(1400px)
+      width: 75rem
+      height: 51.9rem
+    +mq(xl)
+      width: 63rem
+      height: 46.9rem
+    +mq(1100px)
+      width: 55rem
+      height: 41.9rem
+    +mq(lg)
+      right: -4rem
+      width: 46rem
+      height: 35.9rem
+    +mq(md)
+      display: none
     .house
       position: absolute
+      +mq(1500px)
+        max-width: 100%
+  .skew-btn
+    +mq(374px)
+      width: 100%
+    &:after
+      margin-left: .5rem
 .quality-list
   @include list-default
   display: flex
   position: absolute
   bottom: -5rem
   right: 7rem
+  +mq(xl)
+    bottom: -1rem
+  +mq(lg)
+    bottom: 0
   li
     position: relative
     &:not(:first-child)
@@ -82,3 +156,7 @@
       left: -5rem
   img
     width: 12rem
+    +mq(xl)
+      width: 10rem
+    +mq(lg)
+      width: 8rem

@@ -2,27 +2,56 @@
   padding: 1rem 0
   position: relative
   z-index: 13
-  display: none
+  background: linear-gradient(to right,#fff 0,#fff 50%,$hero-bg 50%,$hero-bg 100%);
   &__container
     @include make-container(143rem)
     display: flex
     align-items: center
     margin: 0 auto
+    +mq(1400px)
+      padding: 0 2rem
+    +mq(sm)
+      padding: 0 1rem
   &__logo
     align-items: center
     display: flex
+    img
+      +mq(1100px)
+        max-width: 13rem
+      +mq(sm)
+        max-width: 11rem
+      +mq(374px)
+        max-width: 9.5rem
     p
       padding: 1rem 0 1rem 1rem
       margin: 0 0 .3rem  1rem
       font: 1.4rem/1.1 'gm'
       border-left: 1px solid $logo-border
       color: $logo-text
+      +mq(1100px)
+        font-size: 1.2rem
+        padding: .5rem 0 .5rem 1rem
+      +mq(md)
+        display: none
   &__phones
     @include list-default
     display: flex
     margin: 0 7rem 0 auto
+    +mq(1100px)
+      margin: 0 4rem 0 auto
+    +mq(lg)
+      margin: 0 2rem 0 auto
+    +mq(sm)
+      margin: 0 1rem 0 auto
     li
       padding: 0 2rem
+      +mq(1100px)
+        padding: 0 1rem
+      +mq(sm)
+        padding: 0 .5rem
+      +mq(md)
+        &:last-child
+          display: none
     a
       font: 2rem/1 'gm'
       text-decoration: none
@@ -30,6 +59,12 @@
       position: relative
       padding-left: 3.5rem
       display: block
+      +mq(lg)
+        font-size: 1.6rem
+      +mq(sm)
+        font-size: 1.4rem
+      +mq(374px)
+        font-size: 1.2rem
       &::before
         content: ''
         width: 2.9rem
@@ -39,6 +74,10 @@
         left: 0
         top: -.3rem
         background-image: url('../img/spriteall.png')
+        +mq(lg)
+          top: -.5rem
+        +mq(374px)
+          top: -.7rem
       &.h-phone
         &::before
           background-position: -163px -120px

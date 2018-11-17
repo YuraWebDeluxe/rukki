@@ -1,5 +1,7 @@
 .lider
   padding: 15rem 0
+  overflow: hidden
+  display: none
   +mq(lg)
     padding: 10rem 0
   +mq(sm)
@@ -12,7 +14,7 @@
     text-align: right
     font: 4.5rem/1 'gmm'
     color: $text-dark
-    margin-bottom: 8rem
+    margin: 0 auto 8rem
     max-width: 54rem
     +mq(xl)
       font-size: 4rem
@@ -29,6 +31,7 @@
     max-width: 54rem
     font: 1.8rem/1 'gmb'
     color: $red
+    margin: 0 auto
     +mq(lg)
       margin: 0 auto 5rem
       max-width: 43rem
@@ -71,7 +74,7 @@
         top: 14%
       +mq(xl)
         width: 50rem
-        right: -15%
+        right: -5%
         top: 20%
       +mq(md)
         width: 40rem

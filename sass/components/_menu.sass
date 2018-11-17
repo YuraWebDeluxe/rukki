@@ -10,19 +10,31 @@
   display: flex
   flex-direction: column
   align-items: center
-  justify-content: flex-start
+  justify-content: space-between
   height: 100%
   transform: translate3d(100%, 0, 0) scaleX(.7)
   transition: transform .5s cubic-bezier(.98, .05, 0, 1.03) .2s
+  min-height: 65rem
+  +mq(1440px)
+    padding: 5rem
+  +mq(lg)
+    width: 50%
+  +mq(md)
+    width: 60%
+  +mq(sm)
+    width: 65%
   .hamburger
     position: absolute
     top: 9rem
     right: 9rem
+    +mq(1440px)
+      top: 5rem
+      right: 1rem
   &__logo
-    margin-bottom: 20rem
     width: 17rem
     text-align: right
     overflow: hidden
+    flex: 0 0 3rem
     img
       max-width: 100%
       transform: translate3d(0, -100%, 0)
@@ -33,6 +45,9 @@
     text-align: right
     overflow: hidden
     padding-bottom: 1rem
+    +mq(1600px)
+      flex: 1 1 100%
+      padding-top: 5rem
   &__item
     transform: translate3d(100%, 0, 0)
     transition: transform 1s cubic-bezier(1, -.33 , 0, 1.3), opacity .5s
@@ -42,6 +57,10 @@
         transition-delay: $i * .05s
     &:not(:last-child)
       margin-bottom: 4rem
+      +mq(1600px)
+        margin-bottom: 2rem
+      +mq(1440px)
+        margin-bottom: 1.5rem
     a
       font: 1.8rem/1 'gml'
       color: $white
@@ -53,6 +72,8 @@
       z-index: 4
       text-align: center
       transition: color .3s
+      +mq(1500px)
+        font-size: 1.6rem
       &::before
         content: ''
         position: absolute

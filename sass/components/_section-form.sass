@@ -1,4 +1,5 @@
 .section-form
+  display: none
   @include pseudo(b)
     width: 53.5rem
     height: 32.1rem
@@ -174,14 +175,47 @@
   $this: &
   &--double
     padding: 9rem 17rem 8rem 10rem
+    +mq(1440px)
+      padding: 9rem 16rem 8rem 5rem
+      max-width: 85%
+    +mq(1250px)
+      max-width: 80%
+    +mq(xl)
+      padding: 9rem 5rem
+    +mq(lg)
+      padding: 5rem 2.5rem
+    +mq(sm)
+      max-width: 95%
+    +mq(450px)
+      max-width: 100%
+      padding: 5rem 1rem
+    &:before
+      +mq(1350px)
+        top: -11rem
+      +mq(xl)
+        right: -17rem
     #{$this}__subtitle
       text-align: left
       font: 3.2rem/1 'gml'
       margin: 0 0 3rem
+      +mq(lg)
+        font-size: 2.8rem
+      +mq(sm)
+        font-size: 2.4rem
+      +mq(450px)
+        text-align: center
     #{$this}__text
       font: 3.2rem/1 'gmh'
       text-align: left
       margin: 0 0 3rem
+      +mq(1250px)
+        font-size: 2.8rem
+      +mq(lg)
+        font-size: 2.4rem
+      +mq(sm)
+        font-size: 1.8rem
+      +mq(450px)
+        text-align: center
   &__form
     display: flex
     +mq(lg)
@@ -196,11 +230,34 @@
         max-width: 32rem
     &--double
       .input-wrap
+        +mq(xl)
+          max-width: 100%
+          &:not(:last-child)
+            margin-bottom: 4.5rem
         &--text
           flex: 0 0 46%
           width: 45%
+          +mq(xl)
+            flex: 0 0 100%
+            width: 100%
         &--submit
           right: -20rem
+          +mq(xl)
+            position: relative
+            right: auto
+            bottom: auto
+            flex: 0 0 100%
+          [type='submit']
+            +mq(xl)
+              text-align: center
+              padding: 0
+            +mq(sm)
+              text-align: left
+              padding-left: 1rem
+          &:hover
+            [type='submit']
+              +mq(xl)
+                padding: 0
 .section-form
   $this: &
   &--black
