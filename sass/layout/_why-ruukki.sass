@@ -1,6 +1,5 @@
 .why-ruukki
   padding: 10rem 0
-
   .container
     @include make-container(143rem)
     +mq(1430px)
@@ -22,13 +21,13 @@
     +mq(md)
       font-size: 4rem
     +mq(450px)
-      font-size: 3rem
+      font-size: 2.8rem
     & > span
       color: $red
       display: block
       font-size: 4rem
       +mq(450px)
-        font-size: 3rem
+        font-size: 2.8rem
       span
         color: $text-dark
   &__wrap
@@ -44,13 +43,15 @@
     +mq(lg)
       padding: 8rem 5rem 30rem
     +mq(md)
-      padding: 5rem 2.5rem 5rem
+      padding: 5rem 2.5rem
     h3
       font: 3.6rem/1 'gmeb'
       color: $text-dark
       margin-bottom: 8rem
       +mq(md)
         margin-bottom: 3rem
+      +mq(450px)
+        font-size: 3.2rem
       span
         color: $red
     ul
@@ -62,9 +63,13 @@
     p
       font: 1.6rem/1.5 'gm'
       margin: 0
+      +mq(450px)
+        font-size: 1.4rem
     h4
       font: 2rem/1 'gmb'
       margin: 0
+      +mq(450px)
+        font-size: 1.8rem
     &--left
       background: $hero-bg
       text-align: right
@@ -77,8 +82,8 @@
       +mq(lg)
         padding: 5.5rem 1rem 7.5rem 5rem
       +mq(md)
-        border-left: 2.5rem solid $hero-bg
-        padding: 2.5rem 1rem 2.5rem 1rem
+        border: 1.5rem solid $hero-bg
+        padding: 2.5rem 1rem
       h3
         text-align: right
       h4

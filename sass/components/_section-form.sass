@@ -20,7 +20,7 @@
   color: $white
   padding: 9rem 12rem 8rem 10rem
   position: relative
-  box-shadow: 0 37px 72px -20px $dark-shadow    
+  box-shadow: 0 37px 72px -20px $dark-shadow
   +mq(1350px)
     max-width: 85rem
   +mq(xl)
@@ -201,12 +201,24 @@
           width: 45%
         &--submit
           right: -20rem
-
 .section-form
   $this: &
   &--black
     padding: 9rem 17rem 8rem 10rem
     background: url('../img/section-from-bg-blc.png'), $black-rgba
+    +mq(1440px)
+      padding: 9rem 16rem 8rem 5rem
+    +mq(1250px)
+      max-width: 80%
+    +mq(xl)
+      padding: 9rem 10rem
+    +mq(lg)
+      padding: 5rem 2.5rem
+    +mq(sm)
+      max-width: 95%
+    +mq(450px)
+      max-width: 100%
+      padding: 5rem 1rem
     &::before
       display: none
   &__form
@@ -215,12 +227,21 @@
       display: flex
       width: 100%
       justify-content: space-between
+      +mq(lg)
+        max-width: 100%
     &--black
       .input-wrap
         // sass-lint:disable nesting-depth
+        +mq(xl)
+          max-width: 100%
+          &:not(:last-child)
+            margin-bottom: 4.5rem
         &--text
           flex: 0 0 46%
           width: 45%
+          +mq(xl)
+            flex: 0 0 100%
+            width: 100%
           [name='your-phone']
             background: url('../img/your-phone-r.png') no-repeat 0 center
           [name='your-name']
@@ -228,6 +249,22 @@
         &--submit
           right: -20rem
           background: $text-dark
+          +mq(xl)
+            position: relative
+            right: auto
+            bottom: auto
+            flex: 0 0 100%
+          [type='submit']
+            +mq(xl)
+              text-align: center
+              padding: 0
+            +mq(sm)
+              text-align: left
+              padding-left: 1rem
+          &:hover
+            [type='submit']
+              +mq(xl)
+                padding: 0
           &::after
             color: $red
           &::before
