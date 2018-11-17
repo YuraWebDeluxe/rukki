@@ -3,17 +3,28 @@
   background: url('../img/choose-style.png') no-repeat left center
   &__container
     display: flex
+    +mq(lg)
+      flex-direction: column
   &__info
     flex: 50%
     padding: 0 0 0 9rem
+    +mq(lg)
+      padding: 2rem 3rem 0
+      order: 1
   &__title
     font: 4.8rem/1 gmh
     margin: 0 0 8rem
+    +mq(xl)
+      margin: 0 0 2rem
+    +mq(sm)
+      font-size: 3.6rem  
   &__subtitle
     font: 2.5rem/1.5 gml
     margin: 0 0 7rem
     +mq(1300px)
       margin: 0 0 4rem
+    +mq(xl)
+      font-size: 2.2rem
   &__list
     @include list-default(0)
     max-width: 48rem
@@ -21,6 +32,13 @@
     justify-content: space-between
     flex-wrap: wrap
     margin: 0 0 7rem
+    +mq(xl)
+      max-width: 33rem
+    +mq(lg)
+      max-width: 48rem
+      margin: 0 0 3rem
+    +mq(500px)
+      max-width: 33rem  
   &__item
     width: 7rem
     height: 7rem
@@ -62,10 +80,23 @@
   & .skew-btn
     width: 100%
     max-width: 49rem
+    +mq(1160px)
+      max-width: 35rem  
+  &--btn-hiiden
+    +mq(1160px)
+      display: none    
   &__img
-    height: 649px
+    height: 64rem
     flex: 50%
     background: url('../img/house.png') no-repeat right top
+    +mq(lg)
+      background-size: cover
+    +mq(sm)
+      height: 45rem
+    +mq(450px)
+      height: 35rem
 @each $class-name, $img-link in $choose-roof
   .#{$class-name}
     background: url(#{$img-link}) no-repeat right top, url('../img/house.png') no-repeat right top
+    +mq(lg)
+      background-size: cover
