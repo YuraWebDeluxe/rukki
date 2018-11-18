@@ -3,6 +3,8 @@
   display: none
   .container
     @include make-container(135rem)
+    +mq(sm)
+      width: 97%
   &__view
     display: none
     &.active
@@ -13,9 +15,13 @@
     &--second
       background: $hero-bg
       padding: 5rem
+      +mq(sm)
+        padding: 2rem
     &--third
       padding: 5rem
       background: $hero-bg
+      +mq(sm)
+        padding: 2rem 1rem
       .section-form
         margin-top: 30rem
         position: relative
@@ -28,14 +34,23 @@
           position: absolute
           top: -30.5rem
           right: 0
+          +mq(sm)
+            width: 27rem
         &__form
           justify-content: flex-start
+          +mq(xl)
+            flex-wrap: wrap
         .input-wrap
           [type='text']
             max-width: 80%
+            +mq(xl)
+              max-width: 100%
           &--submit
             right: -5rem
             width: 35rem
+            +mq(xl)
+              right: auto
+
             &:hover
               [type='submit']
                 padding-left: 4rem
@@ -45,20 +60,41 @@
               font-family: 'gmm'
   &__title
     font: 3.3rem/1 'gmeb'
-    max-width: 32rem
+    max-width: 41rem
+    +mq(1350px)
+      margin-bottom: 5rem
+    +mq(sm)
+      font-size: 2.6rem
+      margin-bottom: 3rem
+    +mq(374px)
+      font-size: 2.2rem
     span
       color: $red
       font-size: 4rem
+      +mq(sm)
+        font-size: 2.8rem
+      +mq(374px)
+        font-size: 2.4rem
   &__tab
-    max-width: 93rem
+    max-width: 91rem
     margin-left: auto
     justify-content: space-between
     border-bottom: 0
     margin: 0 0 2.5rem auto
+    +mq(1350px)
+      max-width: 100%
     li
       flex-basis: 18%
       border: 0
       position: relative
+      +mq(sm)
+        flex-basis: 49%
+        &:not(:last-child)
+          margin-bottom: .5rem
+        &:last-child
+          order: -1
+        &:nth-child(2)
+          order: -1
       .nav-link
         font-size: 1.4rem
         font-family: 'gmeb'
@@ -71,6 +107,11 @@
         padding: 0
         text-align: center
         border: 0
+        +mq(sm)
+          font-size: 1.2rem
+        +mq(sm)
+          height: 4rem
+          line-height: 4rem
       .nav-link.active
         background: darken($hero-bg, 5%)
       [type='radio']

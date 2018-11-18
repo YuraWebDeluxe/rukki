@@ -10,7 +10,7 @@
   display: flex
   flex-direction: column
   align-items: center
-  justify-content: space-between
+  justify-content: flex-start
   height: 100%
   transform: translate3d(100%, 0, 0) scaleX(.7)
   transition: transform .5s cubic-bezier(.98, .05, 0, 1.03) .2s
@@ -22,7 +22,10 @@
   +mq(md)
     width: 60%
   +mq(sm)
-    width: 65 %
+    width: 65%
+    padding: 5rem 7rem 5rem .5rem
+  +mq(375px)
+    width: 75%
   .hamburger
     position: absolute
     top: 9rem
@@ -30,11 +33,16 @@
     +mq(1440px)
       top: 5rem
       right: 1rem
+    +mq(sm)
+      right: 1.5rem
   &__logo
     width: 17rem
     text-align: right
     overflow: hidden
     flex: 0 0 3rem
+    +mq(sm)
+      width: 12rem
+      margin-left: auto
     img
       max-width: 100%
       transform: translate3d(0, -100%, 0)
@@ -45,9 +53,12 @@
     text-align: right
     overflow: hidden
     padding-bottom: 1rem
+    padding-top: 5rem
     +mq(1600px)
       flex: 1 1 100%
-      padding-top: 5rem
+      
+    +mq(sm)
+      margin-left: auto
   &__item
     transform: translate3d(100%, 0, 0)
     transition: transform 1s cubic-bezier(1, -.33 , 0, 1.3), opacity .5s

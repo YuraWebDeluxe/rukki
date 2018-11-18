@@ -4,12 +4,15 @@
   min-height: 80rem
   position: relative
   overflow: hidden
+  display: none
   +mq(1350px)
     padding: 0
   +mq(xl)
     min-height: 65rem
   +mq(md)
     max-height: 100vh
+  +mq(sm)
+    min-height: 100vh
   &::before
     content: ''
     position: absolute

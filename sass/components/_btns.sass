@@ -49,9 +49,11 @@
 .next-step
   // sass-lint:disable placeholder-in-extend
   @extend .skew-btn
-  padding-left: 2rem
   background: $red
+  padding: 0
   width: 25rem
+  +mq(374px)
+    width: 23rem
   &::before
     display: none
   &::after

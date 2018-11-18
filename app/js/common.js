@@ -37,6 +37,22 @@ $(document).ready(function() {
     draggable: false,
     prevArrow: $('.adress-nav__top'),
     nextArrow: $('.adress-nav__bottom'),
+    responsive: [
+    {
+      breakpoint:992,
+      settings: {
+        slidesToShow: 2,
+        vertical: false,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4,
+        vertical: true,
+      }
+    }
+  ]
   });
 
 
@@ -58,6 +74,20 @@ $(document).ready(function() {
     focusOnSelect: true,
     prevArrow: $('.review-slider-prev'),
     nextArrow: $('.review-slider-next'),
+    responsive: [
+    {
+      breakpoint:576,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint:414,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+  ]
   });
 
   $('.js-hamburger').on('click', function() {
@@ -86,7 +116,7 @@ $(document).ready(function() {
       0:{ items:1 }
     }
   });
-
+  if (window.matchMedia("(min-width: 1350px)").matches) {
   const instance = basicScroll.create({
     elem: document.querySelector('.d-cmpstn__discount'),
     from: 'top-bottom',
@@ -141,6 +171,9 @@ $(document).ready(function() {
       }
     }
   })
+  instance3.start();
+}
+  
 
   $('.rewiews__adress-item').click(function() {
     var selectedElement = $(this).attr('data-toggle');
@@ -150,7 +183,7 @@ $(document).ready(function() {
   });
 
 
-  instance3.start();
+  
 
   // $('.discounts').on('mousemove', function(e){
   //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
@@ -169,6 +202,18 @@ $(document).ready(function() {
   // })
 
   AOS.init();
+
+  $('input[name="square-roof"]').ionRangeSlider({
+    min: 25,
+    max: 500,
+    step: 25,
+    grid: true
+  });
+
+  $('button.js-clc-next').on('click', function(e) {
+      e.preventDefault();
+      $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
+  })
 
 });
 

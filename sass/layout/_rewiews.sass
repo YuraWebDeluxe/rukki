@@ -2,6 +2,8 @@
   display: flex
   position: relative
   display: none
+  +mq(lg)
+    flex-wrap: wrap
   &::before
     content: ''
     position: absolute
@@ -10,12 +12,25 @@
     bottom: 0
     background: url('../img/rewiew-bg.png') no-repeat center
     background-size: cover
+    +mq(lg)
+      width: 100%
   &__col
     padding: 7rem 7rem 6rem 15rem
     flex: 0 0 60%
     max-width: 60%
     position: relative
     z-index: 100
+    +mq(1650px)
+      padding: 7rem 7rem 6rem 10rem
+    +mq(1350px)
+      padding: 7rem 7rem 6rem 5rem
+    +mq(lg)
+      flex: 0 0 100%
+      max-width: 100%
+    +mq(md)
+      padding: 7rem 5rem
+    +mq(sm)
+      padding: 5rem 2.5rem
   &__title
     font: 4.5rem/1 gmeb
     color: $red
@@ -23,6 +38,9 @@
     font: 2.4rem/1 gm
     color: $white
     margin: 0 0 6rem
+    +mq(sm)
+      margin-bottom: 3rem
+      font-size: 1.8rem
   &__text
     // sass-lint:disable no-important
     height: 0
@@ -38,6 +56,10 @@
       align-items: center
       margin: 0 0 4rem
       max-width: 65rem
+      +mq(sm)
+        flex-direction: column
+        align-items: flex-start
+        margin-bottom: 1.5rem
     &-title
       font: 2.4rem/1 gmh
       color: $white
@@ -63,10 +85,40 @@
     padding: 7rem 15rem 15rem 25rem
     max-width: 50%
     max-height: 100%
+    +mq(1680px)
+      padding: 7rem 15rem 15rem 20rem
+    +mq(1650px)
+      padding: 4rem 15rem 10rem
+    +mq(1500px)
+      flex: 0 0 46%
+      max-width: 46%
+      padding: 10rem
+      justify-content: center
+    +mq(1350px)
+      padding: 10rem 5rem
+    +mq(lg)
+      flex: 0 0 100%
+      max-width: 100%
+      position: relative
+      right: auto
+      order: -1
+      justify-content: center
+    +mq(lg)
+      padding: 5rem 5rem 10rem
+    +mq(md)
+      padding: 5rem 2.5rem 10rem
+    +mq(sm)
+      padding: 5rem 2.5rem 7rem
     &-title
       font: 4.5rem/1 gmeb
       color: $white
       margin: 0 0 7rem
+      +mq(1500px)
+        margin-bottom: 5rem
+      +mq(lg)
+        text-align: center
+      +mq(sm)
+        margin-bottom: 2.5rem
     &-list
       @include list-default(0)
     &-item
@@ -75,6 +127,16 @@
       color: $white
       padding: 0 0 0 7rem
       margin: 0 0 4rem
+      +mq(1500px)
+        margin: 0 0 2rem
+      +mq(xl)
+        padding-left: 4rem
+        font-size: 1.6rem
+      +mq(lg)
+        max-width: 45rem
+        margin: 0 auto 2rem
+      +mq(md)
+        padding-right: 1rem
       &:hover
         cursor: pointer
       &::before

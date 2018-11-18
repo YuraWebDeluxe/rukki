@@ -1,5 +1,4 @@
 .section-form
-  display: none
   @include pseudo(b)
     width: 53.5rem
     height: 32.1rem
@@ -311,6 +310,9 @@
             right: auto
             bottom: auto
             flex: 0 0 100%
+          +mq(400px)
+            &::after
+              right: 3%
           [type='submit']
             +mq(xl)
               text-align: center

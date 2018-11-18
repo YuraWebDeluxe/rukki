@@ -6,6 +6,8 @@
   left: 0
   z-index: 10
   max-width: 50%
+  +mq(lg)
+    display: none
   &__box
     position: absolute
     background-image: url('../img/dc-sprite.png')
@@ -15,6 +17,10 @@
     bottom: -5rem
     left: -7rem
     z-index: 10
+    +mq(1350px)
+      transform: scale(0.7)
+    +mq(xl)
+      left: -8rem
   &__box-top
     position: absolute
     background-image: url('../img/dc-sprite.png')
@@ -27,6 +33,8 @@
     transform: translate3d(var(--t-motion-x), var(--t-motion-z), 0) rotate(var(--t-motion-r))
     transition: transform .5s ease-in .1s
     will-change: transform
+    +mq(1350px)
+      transform: scale(0.7) 
   &__percent
     position: absolute
     background-image: url('../img/dc-sprite.png')
@@ -38,6 +46,8 @@
     transition: transform .5s ease-in .1s
     will-change: transform
     right: -5rem
+    +mq(1350px)
+      transform: translateY(-50%)
   &__discount
     position: absolute
     background-image: url('../img/dc-sprite.png')
@@ -49,6 +59,10 @@
     transform: translate3d(var(--d-motion-x), var(--d-motion-z), 0)
     transition: transform .5s ease-in .2s
     will-change: transform
+    +mq(1350px)
+      transform: scale(0.8)
+      top: 39%
+      left: 41%
   &__bubles
     position: absolute
     background-image: url('../img/dc-sprite.png')

@@ -4,13 +4,19 @@
   background-repeat: no-repeat
   background-position: 0 center, 100% center
   background-size:  auto
-  display: none
+  +mq(lg)
+    padding: 10rem 0
   &__wrap
     display: flex
     max-width:  120rem
     margin: 0 auto
     box-shadow: 0 37px 72px -20px $dark-shadow
     position: relative
+    +mq(1350px)
+      max-width: 105rem
+    +mq(xl)
+      max-width: 84rem
+      flex-wrap: wrap
     .d-top
       position: absolute
       width: 53.5rem
@@ -20,33 +26,65 @@
       right: -15rem
       z-index: 5
       transition: .2s
+      +mq(1500px)
+        top: -12rem
+        right: -7rem
+      +mq(1350px)
+        top: -13rem
+      +mq(lg)
+        right: 0
+        display: none
   &__col
     max-width: 50%
     flex: 0 0 50%
     position: relative
     z-index: 1
+    +mq(lg)
+      max-width: 100%
+      flex: 0 0 100%
     &--right
       background:  $text-dark
       padding: 8rem 8rem 8rem 5rem
-
+      +mq(xl)
+        padding: 8rem 5rem
+      +mq(lg)
+        text-align: center
+        padding: 8rem 2.5rem
       h2
         color: $red
         font: 10rem/1 'gmh'
         margin: 0 0 8rem 3rem
+        +mq(xl)
+          font-size: 8rem
+        +mq(lg)
+          margin: 0 0 4rem 0
       p
         font: 4.8rem/1 'gml'
         color: $white
         margin: 0 0 8rem 3rem
+        +mq(xl)
+          font-size: 4rem
+        +mq(lg)
+          margin: 0 0 4rem 0
       span
         &:last-child
           display: block
           text-align: right
+          +mq(lg)
+            display: inline-block
       h3
         font: 3.2rem/1 'gmh'
         margin: 0
         color: $white
         text-align: right
         display: inline-block
+        +mq(xl)
+          font-size: 2.8rem
+          display: block
+          margin-bottom: 2rem
+        +mq(lg)
+          text-align: center
+          margin-bottom: 3rem
 
       .skew-btn
         max-width: 32rem
@@ -55,26 +93,50 @@
         position: absolute
         bottom: 7.7rem
         right: -4rem
+        +mq(1350px)
+          max-width: 27rem
+          padding-left: 4rem
+        +mq(xl)
+          position: relative
+          bottom: auto
+          right: auto
+          margin: 0 auto
+          display: block
         &::after
           right: 4rem
           top: 1.2rem
+          +mq(1350px)
+            right: 2rem
         &:hover
           padding-left: 8rem
+          +mq(1350px)
+            padding-left: 6rem
+        &:before
+          +mq(lg)
+            width: 80%
     &--left
       background: $white
       padding: 8rem 2.5rem 8rem 20rem
       display: flex
       flex-direction: column
       justify-content: space-between
+      +mq(xl)
+        padding: 8rem 2.5rem 8rem 17rem
+      +mq(lg)
+        display: none
       h2
         font: 4.8rem/1 'gmh'
         position: relative
         z-index: 12
         span
           color: $red
+        +mq(xl)
+          font-size: 4rem
       p
         font: 3.2rem/1 'gmh'
         text-align: right
         span
           color: $red
+        +mq(xl)
+          font-size: 2.8rem
 

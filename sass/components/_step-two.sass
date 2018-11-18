@@ -2,10 +2,31 @@
   flex: 0 0 100%
   display: flex
   justify-content: space-between
+  +mq(xl)
+    flex-wrap: wrap
+    justify-content: flex-start
+  +mq(md)
+    justify-content: center
+    max-width: 30rem
+    margin: 0 auto
   &__color
     flex: 0 0 32rem
+    +mq(xl)
+      flex: 0 0 50%
+      margin-bottom: 3rem
+    +mq(md)
+      flex: 0 0 100%
+    .choose-style__list
+      +mq(xl)
+        max-width: 30rem
+        margin: 0
   &__type
     flex: 0 0 25rem
+    +mq(xl)
+      flex: 0 0 50%
+      margin-bottom: 5rem
+    +mq(md)
+      flex: 0 0 100%
     &-list
       @include list-default(0)
       li
@@ -56,6 +77,10 @@
     flex-direction: column
     justify-content: space-between
     text-align: center
+    +mq(xl)
+      flex: 0 0 100%
     .next-step
       width: 100%
       text-align: center
+      +mq(xl)
+        margin-top: 3rem

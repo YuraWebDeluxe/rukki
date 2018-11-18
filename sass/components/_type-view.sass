@@ -1,5 +1,7 @@
 .type-view
   display: flex
+  +mq(lg)
+    flex-wrap: wrap
   &--second
     flex-wrap: wrap
     .type-view__step
@@ -7,14 +9,32 @@
       margin-bottom: 3rem
     .type-view__step-name
       margin-bottom: 5rem
+      +mq(sm)
+        margin-bottom: 2rem
   &__info
-    flex: 0 0 40rem
+    flex: 0 0 42rem
     padding: 4rem
     position: relative
+    +mq(xl)
+      flex: 0 0 38rem
+    +mq(lg)
+      order: 2
+      flex: 0 0 100%
+    +mq(sm)
+      padding: 3rem 1rem 3rem 3rem
     .next-step
       position: absolute
       bottom: 6rem
       right: -12.5rem
+      padding-left: 2rem
+      +mq(xl)
+        bottom: 2rem
+        right: -18rem
+      +mq(lg)
+        position: relative
+        bottom: auto
+        right: auto
+        margin-top: 2rem
   &__step
     font: 2.8rem/1 'gmeb'
     color: $red
@@ -24,12 +44,16 @@
   &__step-name
     font: 2.4rem/1 'gmb'
     margin: 0
+    +mq(sm)
+      font-size: 1.8rem
     span
       color: $red
   &__title
     font: 3rem/1 'gmb'
     color: $red
     margin: 3rem 0
+    +mq(sm)
+      margin: 1.5rem 0
   &__list
     @include list-default(0)
     font: 1.5rem/1.5 'gm'
@@ -43,8 +67,12 @@
         background: $red
         top: .7rem
         left: -3rem
+        +mq(sm)
+          left: -2rem
       &:not(:last-child)
         margin-bottom: 2rem
+        +mq(sm)
+          margin-bottom: 1rem
       img
         display: block
         margin-top: 2rem
