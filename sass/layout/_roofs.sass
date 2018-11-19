@@ -3,7 +3,6 @@
   background: url('../img/roofs-bg-l.png') no-repeat, url('../img/roofs-bg-r.png') no-repeat
   background-position: 0 0, 100% 0
   overflow: hidden
-  display: none
   +mq(md)
     background-position: -50% 10%, 150% -10%
   .container
@@ -50,6 +49,8 @@
         color: $red
     h3
       font: 3rem/1 'gmeb'
+      span
+        color: $red
       +mq(lg)
         font-size: 2.4rem
       +mq(sm)

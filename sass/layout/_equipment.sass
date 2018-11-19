@@ -1,27 +1,51 @@
 .equipment
   padding: 12rem 0
-  display: none
+  overflow: hidden
+  background: url('../img/equipment-bg.png') no-repeat right center
+  +mq(md)
+    padding: 5rem 0
+    background-position: right top
   &__title
     position: absolute
     right: 10rem
     top: 9rem
+    z-index: 1
+    +mq(xl)
+      right: 1rem
+    +mq(md)
+      top: 0  
+    +mq(640px)
+      position: static
+      margin: 0 0 5rem
+      text-align: center
     &--primary
       text-align: right
       display: block
       font: 4.8rem/1 gmh
       color: $red
+      +mq(lg)
+        font-size: 4rem
+      +mq(640px)
+        text-align: center
+        font-size: 3.6rem
     &--secondary
       display: block
       font: 4.5rem/1 gmm
+      +mq(lg)
+        font-size: 3rem
+      +mq(640px)
+        font-size: 2.2rem  
   &__container
     @include make-container(127.6rem)
     position: relative
     margin: 0 auto
-    background: url('../img/equipment-bg.png') no-repeat right center
   &__list
     @include list-default(0)
     width: 30%
     margin: 0 0 9rem
+    +mq(md)
+      width: 100%
+      margin: 0 0 5rem
   &__item
     position: relative
     display: flex
@@ -29,12 +53,18 @@
     padding: 0 0 1.5rem
     &:not(:last-child)
       margin: 0 0 7rem
+      +mq(md)
+        margin: 0 0 4rem
+      +mq(sm)
+        margin: 0 0 2rem  
     &::before,
     &::after
       content: ''
       position: absolute
       display: block
       border-bottom: .6rem dotted $logo-border
+      +mq(md)
+        display: none
     &::before
       bottom: 0
       left: 8rem
@@ -49,17 +79,21 @@
     &:nth-child(1)
       &::after
         width: 100%
+        +mq(1010px)
+          width: 150%
     &:nth-child(2)
       &::after
         width: 14%
     @for $i from 1 through 4
       &:nth-child(#{$i}) .equipment__icon::after
         background: url('../img/equipment/eqi-#{$i}.png') no-repeat center
+        background-size: 55%
   &__icon
     position: relative
-    width: 4rem
     height: 4rem
     margin: 0 4rem 0 0
+    flex: 0 0 4rem
+    background: $hero-bg
     &::after
       content: ''
       position: absolute
@@ -70,5 +104,15 @@
     bottom: 0
     left: 60%
     transform: translateX(-50%)
+    +mq(1010px)
+      left: 70%
+    +mq(830px)
+      left: 80%
+    +mq(md)
+      left: 100%
+    +mq(640px)  
+      transform: translateX(-30%)
+    +mq(480px)
+      display: none  
   &__item-title
     font: 1.8rem/1 gmb
