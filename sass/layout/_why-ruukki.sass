@@ -1,9 +1,11 @@
 .why-ruukki
   padding: 10rem 0
+  +mq(lg)
+    padding: 10em 0 5rem
   .container
     @include make-container(143rem)
     +mq(1430px)
-      max-width: 95%
+      max-width: 100%
   &__title
     @include pseudo(b)
       right: 0
@@ -18,7 +20,7 @@
     font: 6rem/1 'gmeb'
     color: $text-dark
     position: relative
-    +mq(md)
+    +mq(lg)
       font-size: 4rem
     +mq(450px)
       font-size: 2.8rem
@@ -33,7 +35,7 @@
   &__wrap
     display: flex
     margin-top: 10rem
-    +mq(md)
+    +mq(lg)
       flex-wrap: wrap
       margin-top: 5rem
   &__col
@@ -42,23 +44,41 @@
     +mq(xl)
       padding: 8rem 5rem 35rem
     +mq(lg)
-      padding: 8rem 5rem 30rem
-    +mq(md)
-      padding: 5rem 2.5rem
+      padding: 2.5rem 1rem
+      flex: 0 0 100%
     h3
       font: 3.6rem/1 'gmeb'
       color: $text-dark
       margin-bottom: 8rem
-      +mq(md)
+      position: relative
+      @include pseudo(a)
+        width: 100%
+        border-bottom: .6rem dotted $logo-border
+        top: 50%
+      +mq(xl)
+        font-size: 3.2rem
         margin-bottom: 3rem
       +mq(450px)
         font-size: 3.2rem
       span
-        color: $red
+        &:not(.bg-over)
+          color: $red
+        &.bg-over
+          position: relative
+          z-index: 10
+          display: inline-block
+          height: 100%
     ul
       @include list-default(0)
       li
         position: relative
+        height: 14.5rem
+        +mq(1350px)
+          height: 17.5rem
+        +mq(xl)
+          height: 19.5rem
+        +mq(lg)
+          height: auto
         &:not(:last-child)
           margin-bottom: 5rem
     p
@@ -76,17 +96,44 @@
       text-align: right
       h3
         text-align: left
+      .bg-over
+        background: $hero-bg
+        padding-right: 2rem
+        +mq(sm)
+          padding-right: .5rem
+
     &--right
       border: 2.5rem solid $hero-bg
       border-left: 0
       padding: 5.5rem 5.5rem 7.5rem 8rem
       +mq(lg)
-        padding: 5.5rem 1rem 7.5rem 5rem
-      +mq(md)
         border: 1.5rem solid $hero-bg
         padding: 2.5rem 1rem
+      .bg-over
+        background: #fff
+        padding-left: 2rem
+        +mq(sm)
+          padding-left: 0
       h3
         text-align: right
+        @include pseudo(b)
+          border-bottom: .6rem dotted $logo-border
+          width: 5rem
+          transform: rotate(90deg)
+          position: absolute
+          left: -2.2rem
+          bottom: -2rem
+          +mq(xl)
+            width: 2.5rem
+            left: -2.2rem
+            bottom: 0rem
+          +mq(lg)
+            left: -1.5rem
+        &::after
+          +mq(lg)
+            width: 99%
+            right: 0
+
       h4
         color: $red
       li
@@ -99,11 +146,11 @@
           left: -10rem
           +mq(lg)
             left: -7rem
-          +mq(md)
+          +mq(lg)
             display: none
   .section-form
     margin-top: -20rem
-    +mq(md)
+    +mq(lg)
       margin-top: 5rem
 .w-divider
   background-image: url('../img/spriteall.png')
@@ -111,5 +158,5 @@
   width: 4.2rem
   height: 1.1rem
   display: inline-block
-  margin: 1.2rem 0 .5rem
+  margin: 1.2rem 0 .5rem  
   

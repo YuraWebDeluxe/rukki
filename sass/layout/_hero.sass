@@ -38,6 +38,7 @@
     +mq(1400px)
       padding: 0 2rem
   &__content
+    transition: transform 1s ease-in
     position: absolute
     max-width: 52.5rem
     top: 50%
@@ -138,8 +139,12 @@
   .skew-btn
     +mq(374px)
       width: 100%
-    &:after
+    &::after
       margin-left: .5rem
+  &--error
+    height: auto
+    min-height: auto
+    padding: 0
 .quality-list
   @include list-default
   display: flex

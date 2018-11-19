@@ -2,8 +2,9 @@
   padding: 12rem 0
   overflow: hidden
   background: url('../img/equipment-bg.png') no-repeat right center
+  +mq(lg)
+    padding: 5rem 0 0
   +mq(md)
-    padding: 5rem 0
     background-position: right top
   &__title
     position: absolute
@@ -13,7 +14,7 @@
     +mq(xl)
       right: 1rem
     +mq(md)
-      top: 0  
+      top: 0
     +mq(640px)
       position: static
       margin: 0 0 5rem
@@ -34,7 +35,7 @@
       +mq(lg)
         font-size: 3rem
       +mq(640px)
-        font-size: 2.2rem  
+        font-size: 2.2rem
   &__container
     @include make-container(127.6rem)
     position: relative
@@ -56,7 +57,7 @@
       +mq(md)
         margin: 0 0 4rem
       +mq(sm)
-        margin: 0 0 2rem  
+        margin: 0 0 2rem
     &::before,
     &::after
       content: ''
@@ -110,9 +111,25 @@
       left: 80%
     +mq(md)
       left: 100%
-    +mq(640px)  
+    +mq(640px)
       transform: translateX(-30%)
     +mq(480px)
-      display: none  
+      display: none
   &__item-title
     font: 1.8rem/1 gmb
+  .skew-btn
+    background: $red
+    padding-left: 2rem
+    +mq(480px)
+      margin: 0 auto
+      display: block
+    +mq(365px)
+      padding: 0
+      text-align: center
+    &::before
+      background: $text-dark
+    &::after
+      color: $white
+      right: 1.5rem
+      +mq(365px)
+        display: none

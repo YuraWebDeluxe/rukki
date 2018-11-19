@@ -18,6 +18,38 @@ $(document).ready(function() {
     return false;
   });
 
+  $('.smooth-scroll a [data-scroll]').click(function() {
+          var offset = 0; // <-- change the value here
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                  $('html, body').animate({
+                      scrollTop: target.offset().top + offset
+                  }, 1500, 'swing');
+                  return false;
+              }
+          }
+      });
+  $('[data-scroll]').click(function() {
+          var offset = 50; // <-- change the value here
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                  $('.backdrop').removeClass('backdrop--show');
+                  $('.js-hamburger').removeClass('is-active');
+                  $('.menu').removeClass('menu--show');
+                  $('html, body').animate({
+                      scrollTop: target.offset().top + offset
+                  }, 1500, 'swing');
+                  return false;
+              }
+          }
+
+      });
+
+
 
   // select roof
   $('.choose-style__item').click(function() {
@@ -101,6 +133,9 @@ $(document).ready(function() {
         $('.js-hamburger').removeClass('is-active');
       }
       
+  })
+  $('.backdrop').on('click', function() {
+    $(this).removeClasss('backdrop--show');
   })
 
   $('.sertificats__list').owlCarousel({
@@ -213,6 +248,7 @@ $(document).ready(function() {
   $('button.js-clc-next').on('click', function(e) {
       e.preventDefault();
       $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
+      $('html,body').animate({ scrollTop: $('#calculator').offset().top }, 'slow');
   })
 
 });

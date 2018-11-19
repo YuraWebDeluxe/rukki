@@ -68,6 +68,9 @@
     &-date
       font: 1.8rem/1 gm
       color: $red
+    .skew-btn
+      +mq(lg)
+        display: block
   &__feedback
     font: 1.6rem/1.5 gml
     color: $white
@@ -147,3 +150,25 @@
         transform: translateY(-50%)
         color: $text-dark
         font-size: 3.5rem
+  .skew-btn
+    text-transform: none
+    width: 29rem
+    position: absolute
+    bottom: 6rem
+    right: calc(20% - 145px)
+    +mq(lg)
+      display: none
+    &--text
+      display: none
+      position: relative
+      bottom: auto
+      right: auto
+      margin-top: 2rem
+      +mq(lg)
+        display: block
+      +mq(450px)
+        width: 100%
+        &:after
+          right: 1rem
+          +mq(366px)
+            display: none

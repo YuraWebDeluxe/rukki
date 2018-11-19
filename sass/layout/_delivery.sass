@@ -29,6 +29,8 @@
     margin: 15rem 0 0
     +mq(md)
       width: 100%
+    +mq(500px)
+      max-height: 35rem
   &__title
     font: 7.2rem/1 gmh
     color: $red
@@ -52,3 +54,9 @@
     +mq(6s)
       margin: auto 0
       width: 100%
+  .skew-btn
+    text-align: center
+    &::after
+      right: 1rem
+      +mq(360px)
+        display: none

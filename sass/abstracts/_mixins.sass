@@ -15,12 +15,9 @@
       display: $display
       position: $pos
       @content
-
 @mixin make-container($desktop: $container-desktop)
   max-width: $desktop
   padding: 0 2rem
-  
-
 //  Mixin for media queries
 @mixin mq($device-w)
   @if map-has-key($media-breakpoints, $device-w)
@@ -29,7 +26,15 @@
   @else
     @media (max-width: $device-w)
       @content
-
 @mixin minq($device-w)
   @media (min-width: $device-w)
     @content
+@mixin scroll-bar($bg)
+  ::-webkit-scrollbar
+    width: 10px
+  ::-webkit-scrollbar-track
+    background: #f1f1f1
+  ::-webkit-scrollbar-thumb
+    background: $bg
+  ::-webkit-scrollbar-thumb:hover 
+    background: lighten($bg, 5%)

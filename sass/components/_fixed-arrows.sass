@@ -7,16 +7,30 @@
     bottom: 2rem
     background-color: $red
     z-index: 1001
+    +mq(1600px)
+      bottom: 15rem
+    +mq(lg)
+      bottom: 10rem
+    +mq(md)
+      width: 4rem
+      height: 4rem
+      bottom: 4rem
     &:hover
       cursor: pointer
   &__call
     left: 4rem
+    +mq(md)
+      left: 1rem
     &::after
       width: 6rem
       height: 6rem
       content: ''
       display: inline-block
       background: url('../img/phone-fixed.png') no-repeat center
+      +mq(md)
+        width: 4rem
+        height: 4rem
+        background-size: 50%
   &__top
     right: 4rem
     opacity: 0
@@ -28,6 +42,9 @@
     align-items: center
     justify-content: center
     color: $white
+    +mq(md)
+      font-size: 1.6rem
+      right: 1rem
     &::after
       display: inline-block
       content: '\ea3a'

@@ -1,5 +1,7 @@
 .contacts
   padding: 5.5rem 0
+  +mq(md)
+    padding: 5rem 0
 .contacts-list
   @include list-default(0)
   display: flex
@@ -15,7 +17,7 @@
     &:not(:last-child)
       border-right: .6rem $logo-border dotted
       +mq(lg)
-        border: none
+        border: 0
         border-bottom: .6rem $logo-border dotted
     +mq(1540px)
       padding: 0 2.5rem
@@ -32,7 +34,11 @@
     +mq(500px)
       width: 100%
   &__text
-    p
+    a
+      display: block
+      color: $text-dark
+      display: block
+      text-decoration: none
       +mq(lg)
         margin-bottom: 0
       +mq(500px)

@@ -1,0 +1,42 @@
+.error-page
+  text-align: center
+  font-family: 'gmeb'
+  min-height: calc(100vh - 110px)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background: $hero-bg
+  padding: 0 1.5rem	
+  @media  screen and (max-width: 991px)
+    height: calc(100vh - 69px)
+  h1
+    text-transform: uppercase
+    font-size: 4rem
+    margin-bottom: 2rem
+    font-family: 'gmb'
+    margin-bottom: 3rem
+    color: $text-dark
+    span
+      color: $red
+    @media  screen and (max-width: 1200px)
+      font-size: 4.5rem
+    @media  screen and (max-width: 991px)
+      font-size: 4rem
+    @media  screen and (max-width: 768px)
+      font-size: 3.5rem
+    @media  screen and (max-width: 575px)
+      font-size: 3rem
+    @media  screen and (max-width: 350px)
+      font-size: 2.8rem
+  .skew-btn
+    text-align: center
+    display: block
+    line-height: 6rem
+    text-decoration: none
+    color: $white
+    &:after
+      top: 0.2rem
+      right: 1rem
+  &__logo
+    margin-bottom: 3rem
