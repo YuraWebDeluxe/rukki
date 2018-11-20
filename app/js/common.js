@@ -135,7 +135,9 @@ $(document).ready(function() {
       
   })
   $('.backdrop').on('click', function() {
-    $(this).removeClasss('backdrop--show');
+    $('.backdrop').removeClass('backdrop--show');
+    $('.js-hamburger').removeClass('is-active');
+    $('.menu').removeClass('menu--show');
   })
 
   $('.sertificats__list').owlCarousel({
@@ -151,7 +153,51 @@ $(document).ready(function() {
       0:{ items:1 }
     }
   });
-  if (window.matchMedia("(min-width: 1350px)").matches) {
+
+  
+
+  $('.rewiews__adress-item').click(function() {
+    var selectedElement = $(this).attr('data-toggle');
+
+    $('#' + selectedElement).siblings().removeClass('active');
+    $('#' + selectedElement).addClass('active');
+  });
+
+
+  
+
+  // $('.discounts').on('mousemove', function(e){
+  //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
+  //   var  dy = ($(window).innerWidth() / 5 - e.pageY) /100;
+  //   $('.d-top').attr("style", "transform: translate3d(" + dx + "px, " + dy + "px, 0);")
+  // })
+  // $('.lider').on('mousemove', function(e){
+  //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
+  //   var  dy = ($(window).innerWidth() / 5 - e.pageY) /100;
+  //   $('.lider__catalog-img').attr("style", "transform: translate3d(" + dx + "px, " + dy + "px, 0);")
+  // })
+  // $('.quality').on('mousemove', function(e){
+  //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
+  //   var  dy = ($(window).innerWidth() / 5 + e.pageY) /100;
+  //   $('.quality__decor-img').attr("style", "transform: translate3d(" + dx + "px, " + dy + "px, 0);")
+  // })
+
+  AOS.init();
+
+  $('input[name="square-roof"]').ionRangeSlider({
+    min: 25,
+    max: 500,
+    step: 25,
+    grid: true
+  });
+
+  $('button.js-clc-next').on('click', function(e) {
+      e.preventDefault();
+      $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
+      $('html,body').animate({ scrollTop: $('#calculator').offset().top }, 'slow');
+  })
+
+    if (window.matchMedia("(min-width: 1350px)").matches) {
   const instance = basicScroll.create({
     elem: document.querySelector('.d-cmpstn__discount'),
     from: 'top-bottom',
@@ -208,48 +254,6 @@ $(document).ready(function() {
   })
   instance3.start();
 }
-  
-
-  $('.rewiews__adress-item').click(function() {
-    var selectedElement = $(this).attr('data-toggle');
-
-    $('#' + selectedElement).siblings().removeClass('active');
-    $('#' + selectedElement).addClass('active');
-  });
-
-
-  
-
-  // $('.discounts').on('mousemove', function(e){
-  //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
-  //   var  dy = ($(window).innerWidth() / 5 - e.pageY) /100;
-  //   $('.d-top').attr("style", "transform: translate3d(" + dx + "px, " + dy + "px, 0);")
-  // })
-  // $('.lider').on('mousemove', function(e){
-  //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
-  //   var  dy = ($(window).innerWidth() / 5 - e.pageY) /100;
-  //   $('.lider__catalog-img').attr("style", "transform: translate3d(" + dx + "px, " + dy + "px, 0);")
-  // })
-  // $('.quality').on('mousemove', function(e){
-  //   var dx = ($(window).innerWidth() / 2 - e.pageX) / 40;
-  //   var  dy = ($(window).innerWidth() / 5 + e.pageY) /100;
-  //   $('.quality__decor-img').attr("style", "transform: translate3d(" + dx + "px, " + dy + "px, 0);")
-  // })
-
-  AOS.init();
-
-  $('input[name="square-roof"]').ionRangeSlider({
-    min: 25,
-    max: 500,
-    step: 25,
-    grid: true
-  });
-
-  $('button.js-clc-next').on('click', function(e) {
-      e.preventDefault();
-      $(this).parents('.calculator__view').removeClass('active').next().addClass('active');
-      $('html,body').animate({ scrollTop: $('#calculator').offset().top }, 'slow');
-  })
 
 });
 

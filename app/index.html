@@ -66,7 +66,7 @@
             Металочерепиця <span>Ruukki</span>
           </h1>
           <h2 class="hero__subtitle">Змонтуємо надійний дах <br> для Вашої оселі</h2>
-          <button class="skew-btn">Обговорити проект даху<span class="icon-right"></span></button>
+          <button class="skew-btn" data-toggle="modal" data-target="#mdlSuccess">Обговорити проект даху<span class="icon-right"></span></button>
         </div>
 
         <div class="hero__composition">
@@ -1082,9 +1082,77 @@ Pural®, Pural Matt®, Purex®, що стали законодавцями мо�
     </footer>
 
     <section class="fixed-arrows">
-        <a href="#" class="fixed-arrows__call"></a>
+        <a href="#" class="fixed-arrows__call" data-toggle="modal" data-target="#callModal"></a>
         <div id="scroller" class="fixed-arrows__top"></div>
     </section>
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Залишіть заявку</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body section-form">
+        <form>
+          <div class="input-wrap input-wrap--text">
+            <input type="text" name="your-name">
+            <label>Ваше ім'я</label>
+          </div>
+          <div class="input-wrap input-wrap--text">
+            <input type="text" name="your-phone">
+            <label>Ваш телефон</label>
+          </div>
+           <div class="input-wrap input-wrap--submit">
+              <input type="submit" value="Подзвоніть мені">
+              </div>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="callModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Замовити дзвінок</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body section-form">
+        <form>
+          <div class="input-wrap input-wrap--text">
+            <input type="text" name="your-phone">
+            <label>Ваш телефон</label>
+          </div>
+           <div class="input-wrap input-wrap--submit">
+              <input type="submit" value="Залишити заявку">
+              </div>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="modal modal--success fade" id="mdlSuccess" tabindex="-1" role="dialog" aria-labelledby="mdl-success" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="img/logo.png" class="modal-logo">
+        <h3>Дякуємо, Ваша заявка відправлена!</h3>
+        <hr>
+        <p>Очікуйте дзвінок фахівця.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <script src="js/libs.js"></script>
     <script src="js/common.js"></script>

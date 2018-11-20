@@ -95,7 +95,8 @@
         width: 50rem
       +mq(xl)
         flex: 0 0 100%
-        max-width: 32rem
+        max-width: 100%
+        margin-bottom: 2.5rem
       [name='your-phone']
         background: url('../img/your-phone.png') no-repeat 0 center
       [name='your-name']
@@ -121,7 +122,7 @@
         position: relative
         right: auto
         bottom: auto
-        flex: 0 0 32rem
+        flex: 0 0 100%
       &::after
         font-family: 'im'
         content: '\ea3c'
@@ -157,8 +158,12 @@
         font-family: 'gm', monospace
         letter-spacing: .1rem
         text-transform: uppercase
-        +mq(450px)
+        +mq(xl)
+          text-align: center
+          padding-left: 0
+        +mq(sm)
           padding-left:  2rem
+          text-align: left
     &:hover
       [type='submit']
         cursor: pointer
@@ -310,6 +315,7 @@
             right: auto
             bottom: auto
             flex: 0 0 100%
+            text-align: center
           +mq(400px)
             &::after
               right: 3%
@@ -317,6 +323,7 @@
             +mq(xl)
               text-align: center
               padding: 0
+              left: 0
             +mq(sm)
               text-align: left
               padding-left: 1rem

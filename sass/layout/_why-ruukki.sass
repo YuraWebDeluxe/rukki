@@ -47,20 +47,21 @@
       padding: 2.5rem 1rem
       flex: 0 0 100%
     h3
-      font: 3.6rem/1 'gmeb'
-      color: $text-dark
-      margin-bottom: 8rem
-      position: relative
       @include pseudo(a)
         width: 100%
         border-bottom: .6rem dotted $logo-border
         top: 50%
+      font: 3.6rem/1 'gmeb'
+      color: $text-dark
+      margin-bottom: 8rem
+      position: relative
       +mq(xl)
         font-size: 3.2rem
         margin-bottom: 3rem
       +mq(450px)
         font-size: 3.2rem
       span
+        // sass-lint:disable nesting-depth
         &:not(.bg-over)
           color: $red
         &.bg-over
@@ -110,12 +111,11 @@
         border: 1.5rem solid $hero-bg
         padding: 2.5rem 1rem
       .bg-over
-        background: #fff
+        background: $white
         padding-left: 2rem
         +mq(sm)
           padding-left: 0
       h3
-        text-align: right
         @include pseudo(b)
           border-bottom: .6rem dotted $logo-border
           width: 5rem
@@ -123,17 +123,18 @@
           position: absolute
           left: -2.2rem
           bottom: -2rem
-          +mq(xl)
-            width: 2.5rem
-            left: -2.2rem
-            bottom: 0rem
-          +mq(lg)
-            left: -1.5rem
+        text-align: right
+        +mq(xl)
+          width: 2.5rem
+          left: -2.2rem
+          bottom: 0
+        +mq(lg)
+          left: -1.5rem
+          width: 100%
         &::after
           +mq(lg)
             width: 99%
             right: 0
-
       h4
         color: $red
       li
@@ -158,5 +159,4 @@
   width: 4.2rem
   height: 1.1rem
   display: inline-block
-  margin: 1.2rem 0 .5rem  
-  
+  margin: 1.2rem 0 .5rem

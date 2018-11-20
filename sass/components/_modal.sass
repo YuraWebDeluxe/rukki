@@ -1,0 +1,105 @@
+.modal
+  .modal-dialog
+    max-width: 41rem
+    margin-top: 10rem
+    +mq(sm)
+      margin: 10rem auto 0
+      max-width: 95%
+  .modal-header
+    border-bottom: 0
+    position: relative
+    padding: 5rem 3rem 1rem
+    flex-wrap: wrap
+    +mq(md)
+      padding: 2.5rem 2rem 0
+    +mq(374px)
+      padding: 1.5rem 1.5rem 0
+    .modal-title
+      text-align: center
+      width: 100%
+      font: 3.15rem/1 'gml'
+      color: $white
+      text-transform: uppercase
+      @media (max-width: 575px)
+        font-size: 2.8rem
+    .close
+      position: absolute
+      right: -2rem
+      top: -4rem
+      opacity: 1
+      padding: 0
+      margin: 0
+      cursor: pointer
+      background: none
+      border: 0
+      outline: none
+      span
+        color: $white
+        border: 2px solid $white
+        border-radius: 50%
+        text-align: center
+        width: 3rem
+        height: 3rem
+        line-height: 2.5rem
+        display: block
+      @media screen and (max-width: 575px)
+        right: 50%
+        transform: translateX(50%)
+        top: -6rem
+  .modal-content
+    background: url('../img/section-from-bg.png') no-repeat center / cover, $red
+    border: 0
+  .modal-body
+    background: transparent
+  .section-form
+    max-width: 100%
+    padding: 2.5rem 5rem 5rem
+    background: none
+    +mq(md)
+      padding: 2.5rem
+    +mq(374px)
+      padding: 1.5rem
+    .input-wrap
+      &:not(:last-child)
+        margin-bottom: 2.5rem
+      &--text
+        max-width: 100%
+      &--submit
+        position: relative
+        right: auto
+        bottom: auto
+        width: 100%
+        &:after
+          +mq(md)
+            right: .5rem
+        [type='submit']
+          +mq(md)
+            padding-left: 0
+            text-align: center
+    &::before
+      display: none
+  &--success
+    .modal-content
+      background: $hero-bg
+      +mq(md)
+        max-width: 31rem
+        margin: 10rem auto 0
+    .modal-header
+      padding: 0
+    .modal-body
+      text-align: center
+      padding: 2.5rem
+    .modal-logo
+      margin-bottom: 1rem
+    hr
+      @include horizontalLine($red, 5rem, .1rem)
+    h3
+      font: 3rem/1 'gml'
+      margin-bottom: 1rem
+      +mq(md)
+        font-size: 2.4rem
+    p
+      font: 1.8rem/1 'gml'
+      margin: 1rem 0 0
+      +mq(md)
+        font-size: 1.6rem
