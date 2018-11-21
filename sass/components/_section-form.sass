@@ -86,6 +86,11 @@
         left: 0
       &:focus
         outline: none
+    label
+      &.active
+        font-size: 1.6rem
+        top: -.3rem
+        left: 0
     &--text
       height: 6rem
       max-width: 100%
@@ -158,6 +163,9 @@
         font-family: 'gm', monospace
         letter-spacing: .1rem
         text-transform: uppercase
+        outline: none
+        &:focus
+          outline: none
         +mq(xl)
           text-align: center
           padding-left: 0

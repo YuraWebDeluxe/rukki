@@ -1,6 +1,8 @@
 html
   font-size: 10px
-
+// sass-lint:disable no-qualifying-elements
+div.wpcf7
+  width: 100%
 .u-text-red
   color: $red
 
@@ -43,3 +45,9 @@ html
     &::after
       width: .6rem
 @include scroll-bar($red)
+
+.ajax-loader,
+.wpcf7-response-output
+  // sass-lint:disable no-important
+  display: none !important
+

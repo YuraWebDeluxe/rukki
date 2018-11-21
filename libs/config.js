@@ -16,14 +16,7 @@ $(document).ready(function(){
         placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7..."
     });
 
-    // CF7 js callback
-    $(".wpcf7").on('wpcf7:mailsent', function(event){
-	    $('#mdlSuccess').modal('show');
-	    $('#orderModal').modal('hide');
-	    setTimeout(function(){
-	        $('#mdlSuccess').modal('hide');
-	    }, 4000)
-	});
+    
 
 	// Scroll to top
     $(window).scroll(function() {

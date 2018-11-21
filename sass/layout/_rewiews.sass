@@ -128,7 +128,7 @@
       font: 1.8rem/1.5 gm
       color: $white
       padding: 0 0 0 7rem
-      margin: 0 0 4rem
+      margin: .3rem 0 4rem
       +mq(1500px)
         margin: 0 0 2rem
       +mq(xl)
@@ -150,6 +150,11 @@
         transform: translateY(-50%)
         color: $text-dark
         font-size: 3.5rem
+        transition: color .3s, transform .3s
+    &-active
+      &::before
+        color: $white
+        transform: translate(-10%, -50%)
   .skew-btn
     text-transform: none
     width: 29rem

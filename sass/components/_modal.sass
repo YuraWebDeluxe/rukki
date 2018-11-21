@@ -60,7 +60,7 @@
     +mq(374px)
       padding: 1.5rem
     .input-wrap
-      &:not(:last-child)
+      &:not(:last-child):not(.input-wrap--submit)
         margin-bottom: 2.5rem
       &--text
         max-width: 100%
@@ -69,7 +69,7 @@
         right: auto
         bottom: auto
         width: 100%
-        &:after
+        &::after
           +mq(md)
             right: .5rem
         [type='submit']
@@ -92,7 +92,7 @@
     .modal-logo
       margin-bottom: 1rem
     hr
-      @include horizontalLine($red, 5rem, .1rem)
+      @include horizontal-line($red, 5rem, .1rem)
     h3
       font: 3rem/1 'gml'
       margin-bottom: 1rem

@@ -7,8 +7,9 @@
     bottom: 2rem
     background-color: $red
     z-index: 1001
+    transition: transform .5s
     +mq(1600px)
-      bottom: 15rem
+      bottom: 2rem
     +mq(lg)
       bottom: 10rem
     +mq(md)
@@ -31,8 +32,10 @@
         width: 4rem
         height: 4rem
         background-size: 50%
+    &--top
+      transform: translate(0, -100px)
   &__top
-    right: 4rem
+    right: 3.5rem
     opacity: 0
     visibility: hidden
     transform: translateX(6rem)
@@ -53,3 +56,5 @@
       visibility: visible
       opacity: 1
       transform: translateX(0)
+    &--top
+      transform: translate(0, -100px)

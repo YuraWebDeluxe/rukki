@@ -87,9 +87,9 @@ gulp.task('sass-lint', function() {
 
 gulp.task('sprite', function () {
   // Generate our spritesheet
-  var spriteData = gulp.src('app/img/spritesrc/*.png').pipe(spritesmith({
+  var spriteData = gulp.src('app/img/roofs/*.png').pipe(spritesmith({
     imgName: 'spriteall.png',
-    cssName: 'sprite.css'
+    cssName: 'roofs.css'
   }));
 
   // Pipe image stream through image optimizer and onto disk
