@@ -158,12 +158,20 @@ $(document).ready(function() {
     $('#orderModal').modal('hide');
     $('#orderDownloadInstruction').modal('hide');
     $('#orderDownloadCatalog').modal('hide');
-
+    $('.input-wrap').find('label').removeClass('active');
     $('#callModal').modal('hide');
     setTimeout(function() {
       $('#mdlSuccess').modal('hide');
     }, 4000)
   });
+  $('.wpcf7').on('wpcf7submit', function(event) {
+    $(this).find('input[type="submit"]').prop("disabled", true);
+    setTimeout(function(){
+      $(this).find('input[type="submit"]').prop("disabled", false);
+    }, 10000)
+  });
+  
+
   var vindowHeight = document.body.scrollHeight;
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -229,7 +237,7 @@ $(document).ready(function() {
     $('#changeRoof').removeClass().addClass(roof + ' choose-style__img');
   });
 
-  $('.rewiews__adress-item').click(function() {
+  $('.rewiews__adress-item').on('click',function() {
     var selectedElement = $(this).attr('data-toggle');
     $('.rewiews__adress-item').removeClass('rewiews__adress-active');
     $(this).addClass('rewiews__adress-active');
@@ -238,19 +246,24 @@ $(document).ready(function() {
   });
   $('input[type="text"]').on('focus change keyup keydown', function() {
     if ($(this).val() !== "") {
-      $(this).siblings('label').addClass('active')
+      $(this).closest('.input-wrap').find('label').addClass('active');
+      $(this).siblings('label').addClass('active');
     } else {
-      $(this).siblings('label').removeClass('active')
+      $(this).siblings('label').removeClass('active');
+      $(this).closest('.input-wrap').find('label').removeClass('active');
     }
   });
   $('input[type="text"]').on('focus', function() {
-    $(this).siblings('label').addClass('active')
+    $(this).closest('.input-wrap').find('label').addClass('active');
+    $(this).siblings('label').addClass('active');
   });
   $('input[type="text"]').on('blur', function() {
     if ($(this).val().length > 0) {
-      $(this).siblings('label').addClass('active')
+      $(this).closest('.input-wrap').find('label').addClass('active');
+      $(this).siblings('label').addClass('active');
     } else {
-      $(this).siblings('label').removeClass('active')
+      $(this).closest('.input-wrap').find('label').removeClass('active');
+      $(this).siblings('label').removeClass('active');
     }
   });
 
@@ -310,10 +323,17 @@ $(document).ready(function() {
     })
     instance3.start();
   }
+  $('#wpcf7-f94-o7').on('wpcf7mailsent', function() {
+    window.open('/wp-content/themes/rukki/instruction.pdf', '_blank');
+  });
+
+  $('#wpcf7-f95-o8').on('wpcf7mailsent', function() {
+    window.open('/wp-content/themes/rukki/zaporuka.pdf', '_blank');
+  });
 })
 // Openlayer map init
 $(function() {
-  var map = L.map('map').setView(new L.LatLng(48.903730, 24.716918), 17);
+  var map = L.map('map').setView(new L.LatLng(48.904504, 24.714419), 17);
 
   L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -334,7 +354,7 @@ $(function() {
 
   map.attributionControl.setPrefix(false);
 
-  marker = new L.marker([48.903730, 24.716918], {
+  marker = new L.marker([48.904504, 24.714419], {
     icon: MapMarker
   });
 

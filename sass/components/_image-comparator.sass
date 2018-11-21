@@ -4,7 +4,7 @@
     position: relative
     // sass-lint:disable no-url-domains
     // sass-lint:disable no-url-protocols
-    background: url('https://www.julienlejeune.com/codepen/image2.png') no-repeat left top
+    background: url('../img/houses/adamante.jpg') no-repeat left top
     background-size: auto 100%
     height: 100%
     img
@@ -19,7 +19,7 @@
     overflow: hidden
     // sass-lint:disable no-url-domains
     // sass-lint:disable no-url-protocols
-    background: url('https://www.julienlejeune.com/codepen/image1.png') no-repeat left top
+    background: url('../img/houses/original.jpg') no-repeat left top
     background-size: auto 100%
   &__cursor
     position: absolute
@@ -100,3 +100,28 @@
     cursor: pointer
   [type='range']:focus::-ms-fill-lower
     background: $dark-transparent
+.tab-pane
+  &:first-child
+    .comparator__modified
+      background: url('../img/houses/decorrey.jpg') no-repeat left top
+      background-size: auto 100%
+.tab-pane
+  &:last-child
+    .comparator__modified
+      background: url('../img/houses/hyygge.jpg') no-repeat left top
+      background-size: auto 100%
+.tab-pane
+  &:nth-child(2)
+    .comparator__modified
+      background: url('../img/houses/finnera.jpg') no-repeat left top
+      background-size: auto 100%
+.tab-pane
+  &:nth-child(3)
+    .comparator__modified
+      background: url('../img/houses/adamante.jpg') no-repeat left top
+      background-size: auto 100%
+.tab-pane
+  &:nth-child(4)
+    .comparator__modified
+      background: url('../img/houses/monterrey.jpg') no-repeat left top
+      background-size: auto 100%
