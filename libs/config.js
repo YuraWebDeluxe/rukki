@@ -1,10 +1,3 @@
-$(window).load(function() {
-	var $preloader = $('#page-preloader'),
-	$spinner   = $preloader.find('img');
-	$spinner.fadeOut();
-	$preloader.fadeOut('slow');
-	AOS.init();	    
-});
 $(document).ready(function(){
 
 	// Lazy images

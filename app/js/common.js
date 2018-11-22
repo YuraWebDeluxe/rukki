@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $(window).load(function() {
+    var $preloader = $('#page-preloader'),
+    $spinner   = $preloader.find('img');   
+  });
   // Menu 
   $('.js-hamburger').on('click', function() {
     $(this).toggleClass('is-active');

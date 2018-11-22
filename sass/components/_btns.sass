@@ -42,7 +42,15 @@
       left: 100%
       width: 25%
       transform: skew(0deg)
-
+  &--shine-red
+    &::before
+      animation: move 2s infinite
+      width: 25%
+    &::after
+      color: $white
+    &:hover
+      &::before
+        transform: skew(-25deg)
   &--white
     background: $white
     &:hover
@@ -60,3 +68,28 @@
   &::after
     right: 1rem
     color: $white
+
+
+@keyframes move
+  0%
+    left: -10%
+    opacity: 0
+  5%
+    opacity: 0.1
+  48%
+    opacity: 1
+  80%
+    opacity: 0.0
+  100%
+    left: 110%
+@keyframes moveColor
+  0%
+    color: $red
+  70%
+    color: $red
+  80%
+    color: $white
+  95%
+    color: $white
+  100%
+    color: $red
