@@ -28,6 +28,7 @@
       content: ''
       display: inline-block
       background: url('../img/phone-fixed.png') no-repeat center
+      animation: zcwphone 1.5s linear infinite alternate
       +mq(md)
         width: 4rem
         height: 4rem
@@ -58,3 +59,14 @@
       transform: translateX(0)
     &--top
       transform: translate(0, -100px)
+@keyframes zcwphone
+  0%
+    transform: rotate(0deg)
+  25%
+    transform:  rotate(-20deg)
+  50%
+    transform:  rotate(20deg)
+  75%
+    transform: rotate(-20deg)
+  100%
+    transform: rotate(20deg)

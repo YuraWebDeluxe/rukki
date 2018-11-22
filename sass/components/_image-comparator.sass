@@ -1,12 +1,15 @@
 .comparator
   height: 100%
+  &:hover
+    .comparator__modified
+      opacity: 1
+    .comparator__original
+      opacity: 0
   &__modified
     position: relative
-    // sass-lint:disable no-url-domains
-    // sass-lint:disable no-url-protocols
-    background: url('../img/houses/adamante.jpg') no-repeat left top
-    background-size: auto 100%
     height: 100%
+    opacity: 1
+    transition: opacity .5s ease-in
     img
       max-width: 100%
       visibility: hidden
@@ -15,12 +18,12 @@
     top: 0
     left: 0
     height: 100%
-    width: 50%
+    width: 100%
     overflow: hidden
-    // sass-lint:disable no-url-domains
-    // sass-lint:disable no-url-protocols
     background: url('../img/houses/original.jpg') no-repeat left top
     background-size: auto 100%
+    opacity: 1
+    transition: opacity .5s ease-in
   &__cursor
     position: absolute
     top: 50%
@@ -31,6 +34,7 @@
     color: $white
     z-index: 3
     pointer-events: none
+    display: none
     &::before
       content: ''
       display: block
@@ -67,6 +71,7 @@
     -webkit-appearance: none
     opacity: 0
     z-index: 5
+    display: none
   // sass-lint:disable no-vendor-prefixes
   [type='range']::-webkit-slider-runnable-track
     width: 100%
